@@ -29,3 +29,30 @@ Function.prototype.after = function( afterfn ){
 // 函数之前执行（前置装饰），这样就实现了动态装饰的效果。
 
 // 应用场景：分离业务和数据统计
+// 普通写法：
+var showLogin = function(){
+  console.log( '打开登录浮层' );
+  log( this.getAttribute( 'tag' ) );
+}
+var log = function( tag ){
+  console.log( '上报标签为: ' + tag );
+  // (new Image).src = 'http:// xxx.com/report?tag=' + tag; // 真正的上报代码略
+}
+document.getElementById( 'button' ).onclick = showLogin;
+// AOP改写后
+Function.prototype.after = function( afterfn ){
+  var __self = this;
+  return function(){
+    var ret = __self.apply( this, arguments );
+    afterfn.apply( this, arguments );
+    return ret;
+  }
+};
+var showLogin = function(){
+  console.log( '打开登录浮层' );
+}
+var log = function(){
+  console.log( '上报标签为: ' + this.getAttribute( 'tag' ) );
+}
+showLogin = showLogin.after( log ); // 打开登录浮层之后上报数据
+document.getElementById( 'button' ).onclick = showLogin; 
