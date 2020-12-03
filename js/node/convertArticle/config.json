@@ -1,0 +1,23 @@
+{
+  "inputOption": {
+    "hostname": "mp.weixin.qq.com",
+    "path": "/s?__biz=MzUxNjAwNjg5NQ==&mid=100004933&idx=1&sn=4d5366e9797be13e6ddd02bbdc8b0d95&chksm=79aca2c54edb2bd32268362c7e72ff17d1067e76b12baf6b2ce40d385016c9a1c0850617adee#rd"
+  },
+  "output": "test.html",
+  "outputImg": {
+    "dir": "downloads1",
+    "beforeClean": true
+  },
+  "imgSrcPrefix": "downloads1/",
+  "isUploadImg": false,
+  "uploadImgOption": {
+    "url": "https://up.qbox.me",
+    "token": "BvpiseMZraqxVG9Ba8X88tajIq6GlQYZyRSiXUyn:SjxXyq8smI_bYOstFJJtkNgGQ3U=:eyJzY29wZSI6Imh5c3RlcmlhIiwiZGVhZGxpbmUiOjE2MjI0NTE3NTYsInNhdmVLZXkiOiIkKGV0YWcpLSQoeWVhcikkKG1vbikkKGRheSkkKGhvdXIpJChtaW4pJChzZWMpJChleHQpIn0="
+  },
+  "removeDom": {
+    "id": ["js_pc_qr_code", "activity-name", "meta_content", "js_link_dialog"]
+  },
+  "addDom": {
+    "appendBody": "<div style='opacity: 0'><script type='text/javascript' src='https://v1.cnzz.com/z_stat.php?id=1278692136&web_id=1278692136'></script></div>"
+  }
+}
