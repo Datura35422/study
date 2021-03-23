@@ -1,0 +1,991 @@
+{
+  "hash": "fd1e66467f613ea00a2d",
+  "version": "5.5.1",
+  "time": 6349,
+  "builtAt": 1615437572118,
+  "publicPath": "auto",
+  "outputPath": "E:\\project\\demo\\webpack-demo\\dist",
+  "assetsByChunkName": {
+    "app": [
+      "app.bundle.js"
+    ]
+  },
+  "assets": [
+    {
+      "type": "asset",
+      "name": "app.bundle.js",
+      "size": 992856,
+      "chunkNames": [
+        "app"
+      ],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "javascriptModule": false,
+        "minimized": true,
+        "related": {
+          "license": "app.bundle.js.LICENSE.txt"
+        },
+        "size": 992856
+      },
+      "filteredRelated": 0,
+      "related": [
+        {
+          "type": "license",
+          "name": "app.bundle.js.LICENSE.txt",
+          "size": 336,
+          "chunkNames": [],
+          "chunkIdHints": [],
+          "auxiliaryChunkNames": [],
+          "auxiliaryChunkIdHints": [],
+          "emitted": true,
+          "comparedForEmit": false,
+          "cached": false,
+          "info": {
+            "size": 336
+          },
+          "related": {},
+          "chunks": [],
+          "auxiliaryChunks": [],
+          "isOverSizeLimit": false
+        }
+      ],
+      "chunks": [
+        143
+      ],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": true
+    },
+    {
+      "type": "asset",
+      "name": "index.html",
+      "size": 212,
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "size": 212
+      },
+      "related": {},
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    }
+  ],
+  "chunks": [
+    {
+      "rendered": true,
+      "initial": true,
+      "entry": true,
+      "recorded": false,
+      "size": 543697,
+      "sizes": {
+        "javascript": 543353,
+        "runtime": 344
+      },
+      "names": [
+        "app"
+      ],
+      "idHints": [],
+      "runtime": [
+        "app"
+      ],
+      "files": [
+        "app.bundle.js"
+      ],
+      "auxiliaryFiles": [],
+      "hash": "be755680a1ae5e321558",
+      "childrenByOrder": {},
+      "id": 143,
+      "siblings": [],
+      "parents": [],
+      "children": [],
+      "origins": [
+        {
+          "module": "",
+          "moduleIdentifier": "",
+          "moduleName": "",
+          "loc": "app",
+          "request": "./src/index.js"
+        }
+      ]
+    }
+  ],
+  "modules": [
+    {
+      "type": "module",
+      "moduleType": "javascript/esm",
+      "identifier": "E:\\project\\demo\\webpack-demo\\src\\index.js|73bdc794b144cfdb2fdb54d9b4a27203",
+      "name": "./src/index.js + 1 modules",
+      "nameForCondition": "E:\\project\\demo\\webpack-demo\\src\\index.js",
+      "index": 0,
+      "preOrderIndex": 0,
+      "index2": 2,
+      "postOrderIndex": 2,
+      "size": 790,
+      "sizes": {
+        "javascript": 790
+      },
+      "cacheable": true,
+      "built": true,
+      "codeGenerated": true,
+      "cached": false,
+      "optional": false,
+      "orphan": false,
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "id": 307,
+      "chunks": [
+        143
+      ],
+      "assets": [],
+      "reasons": [
+        {
+          "moduleIdentifier": null,
+          "module": null,
+          "moduleName": null,
+          "resolvedModuleIdentifier": null,
+          "resolvedModule": null,
+          "type": "entry",
+          "active": true,
+          "explanation": "",
+          "userRequest": "./src/index.js",
+          "loc": "app",
+          "moduleId": null,
+          "resolvedModuleId": null
+        }
+      ],
+      "usedExports": [],
+      "providedExports": [],
+      "optimizationBailout": [
+        "ModuleConcatenation bailout: Cannot concat with ./node_modules/lodash/lodash.js: Module is not an ECMAScript module"
+      ],
+      "depth": 0,
+      "modules": [
+        {
+          "type": "module",
+          "moduleType": "javascript/auto",
+          "identifier": "E:\\project\\demo\\webpack-demo\\src\\index.js",
+          "name": "./src/index.js",
+          "nameForCondition": "E:\\project\\demo\\webpack-demo\\src\\index.js",
+          "index": 0,
+          "preOrderIndex": 0,
+          "index2": 2,
+          "postOrderIndex": 2,
+          "size": 705,
+          "sizes": {
+            "javascript": 705
+          },
+          "cacheable": true,
+          "built": true,
+          "codeGenerated": false,
+          "cached": false,
+          "optional": false,
+          "orphan": false,
+          "issuer": null,
+          "issuerName": null,
+          "issuerPath": null,
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "profile": {
+            "total": 61,
+            "resolving": 33,
+            "restoring": 0,
+            "building": 27,
+            "integration": 0,
+            "storing": 1,
+            "additionalResolving": 0,
+            "additionalIntegration": 0,
+            "factory": 33,
+            "dependencies": 0
+          },
+          "id": null,
+          "issuerId": null,
+          "chunks": [],
+          "assets": [],
+          "reasons": [],
+          "usedExports": [],
+          "providedExports": [],
+          "optimizationBailout": [],
+          "depth": 0
+        },
+        {
+          "type": "module",
+          "moduleType": "javascript/auto",
+          "identifier": "E:\\project\\demo\\webpack-demo\\src\\print.js",
+          "name": "./src/print.js",
+          "nameForCondition": "E:\\project\\demo\\webpack-demo\\src\\print.js",
+          "index": 2,
+          "preOrderIndex": 2,
+          "index2": 1,
+          "postOrderIndex": 1,
+          "size": 85,
+          "sizes": {
+            "javascript": 85
+          },
+          "cacheable": true,
+          "built": true,
+          "codeGenerated": false,
+          "cached": false,
+          "optional": false,
+          "orphan": false,
+          "issuer": "E:\\project\\demo\\webpack-demo\\src\\index.js",
+          "issuerName": "./src/index.js",
+          "issuerPath": [
+            {
+              "identifier": "E:\\project\\demo\\webpack-demo\\src\\index.js",
+              "name": "./src/index.js",
+              "profile": {
+                "total": 61,
+                "resolving": 33,
+                "restoring": 0,
+                "building": 27,
+                "integration": 0,
+                "storing": 1,
+                "additionalResolving": 0,
+                "additionalIntegration": 0,
+                "factory": 33,
+                "dependencies": 0
+              },
+              "id": null
+            }
+          ],
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "profile": {
+            "total": 34,
+            "resolving": 31,
+            "restoring": 0,
+            "building": 3,
+            "integration": 0,
+            "storing": 0,
+            "additionalResolving": 0,
+            "additionalIntegration": 0,
+            "factory": 31,
+            "dependencies": 0
+          },
+          "id": null,
+          "issuerId": null,
+          "chunks": [],
+          "assets": [],
+          "reasons": [
+            {
+              "moduleIdentifier": "E:\\project\\demo\\webpack-demo\\src\\index.js",
+              "module": "./src/index.js",
+              "moduleName": "./src/index.js",
+              "resolvedModuleIdentifier": "E:\\project\\demo\\webpack-demo\\src\\index.js",
+              "resolvedModule": "./src/index.js",
+              "type": "harmony side effect evaluation",
+              "active": false,
+              "explanation": "",
+              "userRequest": "./print.js",
+              "loc": "3:0-33",
+              "moduleId": null,
+              "resolvedModuleId": null
+            },
+            {
+              "moduleIdentifier": "E:\\project\\demo\\webpack-demo\\src\\index.js",
+              "module": "./src/index.js",
+              "moduleName": "./src/index.js",
+              "resolvedModuleIdentifier": "E:\\project\\demo\\webpack-demo\\src\\index.js",
+              "resolvedModule": "./src/index.js",
+              "type": "harmony import specifier",
+              "active": true,
+              "explanation": "",
+              "userRequest": "./print.js",
+              "loc": "13:18-25",
+              "moduleId": null,
+              "resolvedModuleId": null
+            }
+          ],
+          "usedExports": [
+            "default"
+          ],
+          "providedExports": [
+            "default"
+          ],
+          "optimizationBailout": [],
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "type": "module",
+      "moduleType": "javascript/auto",
+      "identifier": "E:\\project\\demo\\webpack-demo\\node_modules\\lodash\\lodash.js",
+      "name": "./node_modules/lodash/lodash.js",
+      "nameForCondition": "E:\\project\\demo\\webpack-demo\\node_modules\\lodash\\lodash.js",
+      "index": 1,
+      "preOrderIndex": 1,
+      "index2": 0,
+      "postOrderIndex": 0,
+      "size": 542563,
+      "sizes": {
+        "javascript": 542563
+      },
+      "cacheable": true,
+      "built": true,
+      "codeGenerated": true,
+      "cached": false,
+      "optional": false,
+      "orphan": false,
+      "issuer": "E:\\project\\demo\\webpack-demo\\src\\index.js",
+      "issuerName": "./src/index.js",
+      "issuerPath": [
+        {
+          "identifier": "E:\\project\\demo\\webpack-demo\\src\\index.js",
+          "name": "./src/index.js",
+          "profile": {
+            "total": 61,
+            "resolving": 33,
+            "restoring": 0,
+            "building": 27,
+            "integration": 0,
+            "storing": 1,
+            "additionalResolving": 0,
+            "additionalIntegration": 0,
+            "factory": 33,
+            "dependencies": 0
+          },
+          "id": null
+        }
+      ],
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "profile": {
+        "total": 0,
+        "resolving": 0,
+        "restoring": 0,
+        "building": 0,
+        "integration": 0,
+        "storing": 0,
+        "additionalResolving": 0,
+        "additionalIntegration": 0,
+        "factory": 0,
+        "dependencies": 0
+      },
+      "id": 486,
+      "issuerId": null,
+      "chunks": [
+        143
+      ],
+      "assets": [],
+      "reasons": [
+        {
+          "moduleIdentifier": "E:\\project\\demo\\webpack-demo\\node_modules\\lodash\\lodash.js",
+          "module": "./node_modules/lodash/lodash.js",
+          "moduleName": "./node_modules/lodash/lodash.js",
+          "resolvedModuleIdentifier": "E:\\project\\demo\\webpack-demo\\node_modules\\lodash\\lodash.js",
+          "resolvedModule": "./node_modules/lodash/lodash.js",
+          "type": "cjs self exports reference",
+          "active": true,
+          "explanation": "",
+          "userRequest": null,
+          "loc": "425:50-57",
+          "moduleId": 486,
+          "resolvedModuleId": 486
+        },
+        {
+          "moduleIdentifier": "E:\\project\\demo\\webpack-demo\\node_modules\\lodash\\lodash.js",
+          "module": "./node_modules/lodash/lodash.js",
+          "moduleName": "./node_modules/lodash/lodash.js",
+          "resolvedModuleIdentifier": "E:\\project\\demo\\webpack-demo\\node_modules\\lodash\\lodash.js",
+          "resolvedModule": "./node_modules/lodash/lodash.js",
+          "type": "cjs self exports reference",
+          "active": true,
+          "explanation": "",
+          "userRequest": null,
+          "loc": "425:62-78",
+          "moduleId": 486,
+          "resolvedModuleId": 486
+        },
+        {
+          "moduleIdentifier": "E:\\project\\demo\\webpack-demo\\node_modules\\lodash\\lodash.js",
+          "module": "./node_modules/lodash/lodash.js",
+          "moduleName": "./node_modules/lodash/lodash.js",
+          "resolvedModuleIdentifier": "E:\\project\\demo\\webpack-demo\\node_modules\\lodash\\lodash.js",
+          "resolvedModule": "./node_modules/lodash/lodash.js",
+          "type": "cjs self exports reference",
+          "active": true,
+          "explanation": "",
+          "userRequest": null,
+          "loc": "425:82-89",
+          "moduleId": 486,
+          "resolvedModuleId": 486
+        },
+        {
+          "moduleIdentifier": "E:\\project\\demo\\webpack-demo\\node_modules\\lodash\\lodash.js",
+          "module": "./node_modules/lodash/lodash.js",
+          "moduleName": "./node_modules/lodash/lodash.js",
+          "resolvedModuleIdentifier": "E:\\project\\demo\\webpack-demo\\node_modules\\lodash\\lodash.js",
+          "resolvedModule": "./node_modules/lodash/lodash.js",
+          "type": "module decorator",
+          "active": true,
+          "explanation": "",
+          "userRequest": null,
+          "loc": "428:63-69",
+          "moduleId": 486,
+          "resolvedModuleId": 486
+        },
+        {
+          "moduleIdentifier": "E:\\project\\demo\\webpack-demo\\node_modules\\lodash\\lodash.js",
+          "module": "./node_modules/lodash/lodash.js",
+          "moduleName": "./node_modules/lodash/lodash.js",
+          "resolvedModuleIdentifier": "E:\\project\\demo\\webpack-demo\\node_modules\\lodash\\lodash.js",
+          "resolvedModule": "./node_modules/lodash/lodash.js",
+          "type": "module decorator",
+          "active": true,
+          "explanation": "",
+          "userRequest": null,
+          "loc": "428:74-80",
+          "moduleId": 486,
+          "resolvedModuleId": 486
+        },
+        {
+          "moduleIdentifier": "E:\\project\\demo\\webpack-demo\\node_modules\\lodash\\lodash.js",
+          "module": "./node_modules/lodash/lodash.js",
+          "moduleName": "./node_modules/lodash/lodash.js",
+          "resolvedModuleIdentifier": "E:\\project\\demo\\webpack-demo\\node_modules\\lodash\\lodash.js",
+          "resolvedModule": "./node_modules/lodash/lodash.js",
+          "type": "module decorator",
+          "active": true,
+          "explanation": "",
+          "userRequest": null,
+          "loc": "428:93-99",
+          "moduleId": 486,
+          "resolvedModuleId": 486
+        },
+        {
+          "moduleIdentifier": "E:\\project\\demo\\webpack-demo\\node_modules\\lodash\\lodash.js",
+          "module": "./node_modules/lodash/lodash.js",
+          "moduleName": "./node_modules/lodash/lodash.js",
+          "resolvedModuleIdentifier": "E:\\project\\demo\\webpack-demo\\node_modules\\lodash\\lodash.js",
+          "resolvedModule": "./node_modules/lodash/lodash.js",
+          "type": "cjs self exports reference",
+          "active": true,
+          "explanation": "",
+          "userRequest": null,
+          "loc": "17161:7-11",
+          "moduleId": 486,
+          "resolvedModuleId": 486
+        },
+        {
+          "moduleIdentifier": "E:\\project\\demo\\webpack-demo\\src\\index.js|73bdc794b144cfdb2fdb54d9b4a27203",
+          "module": "./src/index.js + 1 modules",
+          "moduleName": "./src/index.js + 1 modules",
+          "resolvedModuleIdentifier": "E:\\project\\demo\\webpack-demo\\src\\index.js",
+          "resolvedModule": "./src/index.js",
+          "type": "harmony side effect evaluation",
+          "active": true,
+          "explanation": "",
+          "userRequest": "lodash",
+          "loc": "1:0-23",
+          "moduleId": 307,
+          "resolvedModuleId": null
+        },
+        {
+          "moduleIdentifier": "E:\\project\\demo\\webpack-demo\\src\\index.js|73bdc794b144cfdb2fdb54d9b4a27203",
+          "module": "./src/index.js + 1 modules",
+          "moduleName": "./src/index.js + 1 modules",
+          "resolvedModuleIdentifier": "E:\\project\\demo\\webpack-demo\\src\\index.js",
+          "resolvedModule": "./src/index.js",
+          "type": "harmony side effect evaluation",
+          "active": true,
+          "explanation": "",
+          "userRequest": "lodash",
+          "loc": "2:0-38",
+          "moduleId": 307,
+          "resolvedModuleId": null
+        },
+        {
+          "moduleIdentifier": "E:\\project\\demo\\webpack-demo\\src\\index.js|73bdc794b144cfdb2fdb54d9b4a27203",
+          "module": "./src/index.js + 1 modules",
+          "moduleName": "./src/index.js + 1 modules",
+          "resolvedModuleIdentifier": "E:\\project\\demo\\webpack-demo\\src\\index.js",
+          "resolvedModule": "./src/index.js",
+          "type": "harmony import specifier",
+          "active": true,
+          "explanation": "",
+          "userRequest": "lodash",
+          "loc": "10:24-29",
+          "moduleId": 307,
+          "resolvedModuleId": null
+        }
+      ],
+      "usedExports": null,
+      "providedExports": null,
+      "optimizationBailout": [
+        "CommonJS bailout: this is used directly at 17161:7-11",
+        "CommonJS bailout: exports is used directly at 425:50-57",
+        "CommonJS bailout: exports is used directly at 425:82-89",
+        "ModuleConcatenation bailout: Module is not an ECMAScript module"
+      ],
+      "depth": 1
+    },
+    {
+      "type": "module",
+      "moduleType": "javascript/auto",
+      "identifier": "E:\\project\\demo\\webpack-demo\\src\\print.js",
+      "name": "./src/print.js",
+      "nameForCondition": "E:\\project\\demo\\webpack-demo\\src\\print.js",
+      "index": 2,
+      "preOrderIndex": 2,
+      "index2": 1,
+      "postOrderIndex": 1,
+      "size": 85,
+      "sizes": {
+        "javascript": 85
+      },
+      "cacheable": true,
+      "built": true,
+      "codeGenerated": false,
+      "cached": false,
+      "optional": false,
+      "orphan": true,
+      "issuer": "E:\\project\\demo\\webpack-demo\\src\\index.js",
+      "issuerName": "./src/index.js",
+      "issuerPath": [
+        {
+          "identifier": "E:\\project\\demo\\webpack-demo\\src\\index.js",
+          "name": "./src/index.js",
+          "profile": {
+            "total": 61,
+            "resolving": 33,
+            "restoring": 0,
+            "building": 27,
+            "integration": 0,
+            "storing": 1,
+            "additionalResolving": 0,
+            "additionalIntegration": 0,
+            "factory": 33,
+            "dependencies": 0
+          },
+          "id": null
+        }
+      ],
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "profile": {
+        "total": 34,
+        "resolving": 31,
+        "restoring": 0,
+        "building": 3,
+        "integration": 0,
+        "storing": 0,
+        "additionalResolving": 0,
+        "additionalIntegration": 0,
+        "factory": 31,
+        "dependencies": 0
+      },
+      "id": null,
+      "issuerId": null,
+      "chunks": [],
+      "assets": [],
+      "reasons": [
+        {
+          "moduleIdentifier": "E:\\project\\demo\\webpack-demo\\src\\index.js",
+          "module": "./src/index.js",
+          "moduleName": "./src/index.js",
+          "resolvedModuleIdentifier": "E:\\project\\demo\\webpack-demo\\src\\index.js",
+          "resolvedModule": "./src/index.js",
+          "type": "harmony side effect evaluation",
+          "active": false,
+          "explanation": "",
+          "userRequest": "./print.js",
+          "loc": "3:0-33",
+          "moduleId": null,
+          "resolvedModuleId": null
+        },
+        {
+          "moduleIdentifier": "E:\\project\\demo\\webpack-demo\\src\\index.js",
+          "module": "./src/index.js",
+          "moduleName": "./src/index.js",
+          "resolvedModuleIdentifier": "E:\\project\\demo\\webpack-demo\\src\\index.js",
+          "resolvedModule": "./src/index.js",
+          "type": "harmony import specifier",
+          "active": true,
+          "explanation": "",
+          "userRequest": "./print.js",
+          "loc": "13:18-25",
+          "moduleId": null,
+          "resolvedModuleId": null
+        }
+      ],
+      "usedExports": [
+        "default"
+      ],
+      "providedExports": [
+        "default"
+      ],
+      "optimizationBailout": [],
+      "depth": 1
+    },
+    {
+      "type": "module",
+      "moduleType": "runtime",
+      "identifier": "webpack/runtime/global",
+      "name": "webpack/runtime/global",
+      "nameForCondition": null,
+      "index": null,
+      "preOrderIndex": null,
+      "index2": null,
+      "postOrderIndex": null,
+      "size": 221,
+      "sizes": {
+        "runtime": 221
+      },
+      "built": false,
+      "codeGenerated": true,
+      "cached": false,
+      "optional": false,
+      "orphan": false,
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "id": "",
+      "chunks": [
+        143
+      ],
+      "assets": [],
+      "reasons": [],
+      "usedExports": null,
+      "providedExports": [],
+      "optimizationBailout": [],
+      "depth": null
+    },
+    {
+      "type": "module",
+      "moduleType": "runtime",
+      "identifier": "webpack/runtime/node module decorator",
+      "name": "webpack/runtime/node module decorator",
+      "nameForCondition": null,
+      "index": null,
+      "preOrderIndex": null,
+      "index2": null,
+      "postOrderIndex": null,
+      "size": 123,
+      "sizes": {
+        "runtime": 123
+      },
+      "built": false,
+      "codeGenerated": true,
+      "cached": false,
+      "optional": false,
+      "orphan": false,
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "id": "",
+      "chunks": [
+        143
+      ],
+      "assets": [],
+      "reasons": [],
+      "usedExports": null,
+      "providedExports": [],
+      "optimizationBailout": [],
+      "depth": null
+    }
+  ],
+  "entrypoints": {
+    "app": {
+      "name": "app",
+      "chunks": [
+        143
+      ],
+      "assets": [
+        {
+          "name": "app.bundle.js",
+          "size": 992856
+        }
+      ],
+      "filteredAssets": 0,
+      "assetsSize": 992856,
+      "auxiliaryAssets": [],
+      "filteredAuxiliaryAssets": 0,
+      "auxiliaryAssetsSize": 0,
+      "children": {},
+      "childAssets": {},
+      "isOverSizeLimit": true
+    }
+  },
+  "namedChunkGroups": {
+    "app": {
+      "name": "app",
+      "chunks": [
+        143
+      ],
+      "assets": [
+        {
+          "name": "app.bundle.js",
+          "size": 992856
+        }
+      ],
+      "filteredAssets": 0,
+      "assetsSize": 992856,
+      "auxiliaryAssets": [],
+      "filteredAuxiliaryAssets": 0,
+      "auxiliaryAssetsSize": 0,
+      "children": {},
+      "childAssets": {},
+      "isOverSizeLimit": true
+    }
+  },
+  "errors": [],
+  "errorsCount": 0,
+  "warnings": [
+    {
+      "message": "configuration\nThe 'mode' option has not been set, webpack will fallback to 'production' for this value. Set 'mode' option to 'development' or 'production' to enable defaults for each environment.\nYou can also set it to 'none' to disable any default behavior. Learn more: https://webpack.js.org/configuration/mode/",
+      "stack": "NoModeWarning: configuration\nThe 'mode' option has not been set, webpack will fallback to 'production' for this value. Set 'mode' option to 'development' or 'production' to enable defaults for each environment.\nYou can also set it to 'none' to disable any default behavior. Learn more: https://webpack.js.org/configuration/mode/\n    at E:\\project\\demo\\webpack-demo\\node_modules\\webpack\\lib\\WarnNoModeSetPlugin.js:20:30\n    at Hook.eval [as call] (eval at create (E:\\project\\demo\\webpack-demo\\node_modules\\tapable\\lib\\HookCodeFactory.js:19:10), <anonymous>:19:1)\n    at Hook.CALL_DELEGATE [as _call] (E:\\project\\demo\\webpack-demo\\node_modules\\tapable\\lib\\Hook.js:14:14)\n    at Compiler.newCompilation (E:\\project\\demo\\webpack-demo\\node_modules\\webpack\\lib\\Compiler.js:942:30)\n    at E:\\project\\demo\\webpack-demo\\node_modules\\webpack\\lib\\Compiler.js:984:29\n    at Hook.eval [as callAsync] (eval at create (E:\\project\\demo\\webpack-demo\\node_modules\\tapable\\lib\\HookCodeFactory.js:33:10), <anonymous>:4:1)\n    at Hook.CALL_ASYNC_DELEGATE [as _callAsync] (E:\\project\\demo\\webpack-demo\\node_modules\\tapable\\lib\\Hook.js:18:14)\n    at Compiler.compile (E:\\project\\demo\\webpack-demo\\node_modules\\webpack\\lib\\Compiler.js:979:28)\n    at E:\\project\\demo\\webpack-demo\\node_modules\\webpack\\lib\\Compiler.js:470:12\n    at Compiler.readRecords (E:\\project\\demo\\webpack-demo\\node_modules\\webpack\\lib\\Compiler.js:821:11)\n    at E:\\project\\demo\\webpack-demo\\node_modules\\webpack\\lib\\Compiler.js:467:11\n    at Hook.eval [as callAsync] (eval at create (E:\\project\\demo\\webpack-demo\\node_modules\\tapable\\lib\\HookCodeFactory.js:33:10), <anonymous>:4:1)\n    at Hook.CALL_ASYNC_DELEGATE [as _callAsync] (E:\\project\\demo\\webpack-demo\\node_modules\\tapable\\lib\\Hook.js:18:14)\n    at E:\\project\\demo\\webpack-demo\\node_modules\\webpack\\lib\\Compiler.js:464:20\n    at Hook.eval [as callAsync] (eval at create (E:\\project\\demo\\webpack-demo\\node_modules\\tapable\\lib\\HookCodeFactory.js:33:10), <anonymous>:13:1)\n    at Hook.CALL_ASYNC_DELEGATE [as _callAsync] (E:\\project\\demo\\webpack-demo\\node_modules\\tapable\\lib\\Hook.js:18:14)\n    at run (E:\\project\\demo\\webpack-demo\\node_modules\\webpack\\lib\\Compiler.js:461:25)\n    at Compiler.run (E:\\project\\demo\\webpack-demo\\node_modules\\webpack\\lib\\Compiler.js:484:4)\n    at processOptions (E:\\project\\demo\\webpack-demo\\node_modules\\webpack-cli\\bin\\cli.js:353:14)\n    at E:\\project\\demo\\webpack-demo\\node_modules\\webpack-cli\\bin\\cli.js:364:3\n    at Object.parse (E:\\project\\demo\\webpack-demo\\node_modules\\yargs\\yargs.js:576:18)\n    at E:\\project\\demo\\webpack-demo\\node_modules\\webpack-cli\\bin\\cli.js:49:8\n    at Object.<anonymous> (E:\\project\\demo\\webpack-demo\\node_modules\\webpack-cli\\bin\\cli.js:366:3)\n    at Module._compile (internal/modules/cjs/loader.js:1137:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1157:10)\n    at Module.load (internal/modules/cjs/loader.js:985:32)\n    at Function.Module._load (internal/modules/cjs/loader.js:878:14)\n    at Module.require (internal/modules/cjs/loader.js:1025:19)\n    at require (internal/modules/cjs/helpers.js:72:18)\n    at runCli (E:\\project\\demo\\webpack-demo\\node_modules\\webpack\\bin\\webpack.js:54:2)"
+    },
+    {
+      "message": "asset size limit: The following asset(s) exceed the recommended size limit (244 KiB).\nThis can impact web performance.\nAssets: \n  app.bundle.js (970 KiB)",
+      "stack": "AssetsOverSizeLimitWarning: asset size limit: The following asset(s) exceed the recommended size limit (244 KiB).\nThis can impact web performance.\nAssets: \n  app.bundle.js (970 KiB)\n    at E:\\project\\demo\\webpack-demo\\node_modules\\webpack\\lib\\performance\\SizeLimitsPlugin.js:134:7\n    at Hook.eval [as callAsync] (eval at create (E:\\project\\demo\\webpack-demo\\node_modules\\tapable\\lib\\HookCodeFactory.js:33:10), <anonymous>:7:1)\n    at Hook.CALL_ASYNC_DELEGATE [as _callAsync] (E:\\project\\demo\\webpack-demo\\node_modules\\tapable\\lib\\Hook.js:18:14)\n    at E:\\project\\demo\\webpack-demo\\node_modules\\webpack\\lib\\Compiler.js:754:27\n    at E:\\project\\demo\\webpack-demo\\node_modules\\neo-async\\async.js:2818:7\n    at done (E:\\project\\demo\\webpack-demo\\node_modules\\neo-async\\async.js:3522:9)\n    at Hook.eval [as callAsync] (eval at create (E:\\project\\demo\\webpack-demo\\node_modules\\tapable\\lib\\HookCodeFactory.js:33:10), <anonymous>:4:1)\n    at E:\\project\\demo\\webpack-demo\\node_modules\\webpack\\lib\\Compiler.js:638:33\n    at E:\\project\\demo\\webpack-demo\\node_modules\\graceful-fs\\graceful-fs.js:144:16\n    at E:\\project\\demo\\webpack-demo\\node_modules\\graceful-fs\\graceful-fs.js:61:14\n    at FSReqCallback.oncomplete (fs.js:156:23)"
+    },
+    {
+      "message": "entrypoint size limit: The following entrypoint(s) combined asset size exceeds the recommended limit (244 KiB). This can impact web performance.\nEntrypoints:\n  app (970 KiB)\n      app.bundle.js\n",
+      "stack": "EntrypointsOverSizeLimitWarning: entrypoint size limit: The following entrypoint(s) combined asset size exceeds the recommended limit (244 KiB). This can impact web performance.\nEntrypoints:\n  app (970 KiB)\n      app.bundle.js\n\n    at E:\\project\\demo\\webpack-demo\\node_modules\\webpack\\lib\\performance\\SizeLimitsPlugin.js:139:7\n    at Hook.eval [as callAsync] (eval at create (E:\\project\\demo\\webpack-demo\\node_modules\\tapable\\lib\\HookCodeFactory.js:33:10), <anonymous>:7:1)\n    at Hook.CALL_ASYNC_DELEGATE [as _callAsync] (E:\\project\\demo\\webpack-demo\\node_modules\\tapable\\lib\\Hook.js:18:14)\n    at E:\\project\\demo\\webpack-demo\\node_modules\\webpack\\lib\\Compiler.js:754:27\n    at E:\\project\\demo\\webpack-demo\\node_modules\\neo-async\\async.js:2818:7\n    at done (E:\\project\\demo\\webpack-demo\\node_modules\\neo-async\\async.js:3522:9)\n    at Hook.eval [as callAsync] (eval at create (E:\\project\\demo\\webpack-demo\\node_modules\\tapable\\lib\\HookCodeFactory.js:33:10), <anonymous>:4:1)\n    at E:\\project\\demo\\webpack-demo\\node_modules\\webpack\\lib\\Compiler.js:638:33\n    at E:\\project\\demo\\webpack-demo\\node_modules\\graceful-fs\\graceful-fs.js:144:16\n    at E:\\project\\demo\\webpack-demo\\node_modules\\graceful-fs\\graceful-fs.js:61:14\n    at FSReqCallback.oncomplete (fs.js:156:23)"
+    },
+    {
+      "message": "webpack performance recommendations: \nYou can limit the size of your bundles by using import() or require.ensure to lazy load some parts of your application.\nFor more info visit https://webpack.js.org/guides/code-splitting/",
+      "stack": "NoAsyncChunksWarning: webpack performance recommendations: \nYou can limit the size of your bundles by using import() or require.ensure to lazy load some parts of your application.\nFor more info visit https://webpack.js.org/guides/code-splitting/\n    at E:\\project\\demo\\webpack-demo\\node_modules\\webpack\\lib\\performance\\SizeLimitsPlugin.js:153:21\n    at Hook.eval [as callAsync] (eval at create (E:\\project\\demo\\webpack-demo\\node_modules\\tapable\\lib\\HookCodeFactory.js:33:10), <anonymous>:7:1)\n    at Hook.CALL_ASYNC_DELEGATE [as _callAsync] (E:\\project\\demo\\webpack-demo\\node_modules\\tapable\\lib\\Hook.js:18:14)\n    at E:\\project\\demo\\webpack-demo\\node_modules\\webpack\\lib\\Compiler.js:754:27\n    at E:\\project\\demo\\webpack-demo\\node_modules\\neo-async\\async.js:2818:7\n    at done (E:\\project\\demo\\webpack-demo\\node_modules\\neo-async\\async.js:3522:9)\n    at Hook.eval [as callAsync] (eval at create (E:\\project\\demo\\webpack-demo\\node_modules\\tapable\\lib\\HookCodeFactory.js:33:10), <anonymous>:4:1)\n    at E:\\project\\demo\\webpack-demo\\node_modules\\webpack\\lib\\Compiler.js:638:33\n    at E:\\project\\demo\\webpack-demo\\node_modules\\graceful-fs\\graceful-fs.js:144:16\n    at E:\\project\\demo\\webpack-demo\\node_modules\\graceful-fs\\graceful-fs.js:61:14\n    at FSReqCallback.oncomplete (fs.js:156:23)"
+    }
+  ],
+  "warningsCount": 4,
+  "children": [
+    {
+      "name": "HtmlWebpackCompiler",
+      "hash": "5805ba80aabc34e03f31",
+      "version": "5.5.1",
+      "time": 358,
+      "builtAt": 1615437566304,
+      "publicPath": "auto",
+      "outputPath": "E:\\project\\demo\\webpack-demo\\dist",
+      "assetsByChunkName": {
+        "HtmlWebpackPlugin_0": [
+          "__child-HtmlWebpackPlugin_0"
+        ]
+      },
+      "assets": [
+        {
+          "type": "asset",
+          "name": "__child-HtmlWebpackPlugin_0",
+          "size": 1816,
+          "chunkNames": [
+            "HtmlWebpackPlugin_0"
+          ],
+          "chunkIdHints": [],
+          "auxiliaryChunkNames": [],
+          "auxiliaryChunkIdHints": [],
+          "emitted": false,
+          "comparedForEmit": false,
+          "cached": true,
+          "info": {
+            "javascriptModule": false
+          },
+          "related": {},
+          "chunks": [
+            443
+          ],
+          "auxiliaryChunks": [],
+          "isOverSizeLimit": false
+        }
+      ],
+      "chunks": [
+        {
+          "rendered": true,
+          "initial": true,
+          "entry": true,
+          "recorded": false,
+          "size": 435,
+          "sizes": {
+            "javascript": 435
+          },
+          "names": [
+            "HtmlWebpackPlugin_0"
+          ],
+          "idHints": [],
+          "runtime": [
+            "HtmlWebpackPlugin_0"
+          ],
+          "files": [
+            "__child-HtmlWebpackPlugin_0"
+          ],
+          "auxiliaryFiles": [],
+          "hash": "737a12e87bf048f89f70",
+          "childrenByOrder": {},
+          "id": 443,
+          "siblings": [],
+          "parents": [],
+          "children": [],
+          "origins": [
+            {
+              "module": "",
+              "moduleIdentifier": "",
+              "moduleName": "",
+              "loc": "HtmlWebpackPlugin_0",
+              "request": "E:\\project\\demo\\webpack-demo\\node_modules\\html-webpack-plugin\\lib\\loader.js!E:\\project\\demo\\webpack-demo\\node_modules\\html-webpack-plugin\\default_index.ejs"
+            }
+          ]
+        }
+      ],
+      "modules": [
+        {
+          "type": "module",
+          "moduleType": "javascript/auto",
+          "identifier": "E:\\project\\demo\\webpack-demo\\node_modules\\html-webpack-plugin\\lib\\loader.js!E:\\project\\demo\\webpack-demo\\node_modules\\html-webpack-plugin\\default_index.ejs",
+          "name": "./node_modules/html-webpack-plugin/lib/loader.js!./node_modules/html-webpack-plugin/default_index.ejs",
+          "nameForCondition": "E:\\project\\demo\\webpack-demo\\node_modules\\html-webpack-plugin\\default_index.ejs",
+          "index": 0,
+          "preOrderIndex": 0,
+          "index2": 0,
+          "postOrderIndex": 0,
+          "size": 435,
+          "sizes": {
+            "javascript": 435
+          },
+          "cacheable": true,
+          "built": true,
+          "codeGenerated": true,
+          "cached": false,
+          "optional": false,
+          "orphan": false,
+          "issuer": null,
+          "issuerName": null,
+          "issuerPath": null,
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "profile": {
+            "total": 0,
+            "resolving": 0,
+            "restoring": 0,
+            "building": 0,
+            "integration": 0,
+            "storing": 0,
+            "additionalResolving": 0,
+            "additionalIntegration": 0,
+            "factory": 0,
+            "dependencies": 0
+          },
+          "id": 893,
+          "issuerId": null,
+          "chunks": [
+            443
+          ],
+          "assets": [],
+          "reasons": [
+            {
+              "moduleIdentifier": "E:\\project\\demo\\webpack-demo\\node_modules\\html-webpack-plugin\\lib\\loader.js!E:\\project\\demo\\webpack-demo\\node_modules\\html-webpack-plugin\\default_index.ejs",
+              "module": "./node_modules/html-webpack-plugin/lib/loader.js!./node_modules/html-webpack-plugin/default_index.ejs",
+              "moduleName": "./node_modules/html-webpack-plugin/lib/loader.js!./node_modules/html-webpack-plugin/default_index.ejs",
+              "resolvedModuleIdentifier": "E:\\project\\demo\\webpack-demo\\node_modules\\html-webpack-plugin\\lib\\loader.js!E:\\project\\demo\\webpack-demo\\node_modules\\html-webpack-plugin\\default_index.ejs",
+              "resolvedModule": "./node_modules/html-webpack-plugin/lib/loader.js!./node_modules/html-webpack-plugin/default_index.ejs",
+              "type": "cjs self exports reference",
+              "active": true,
+              "explanation": "",
+              "userRequest": null,
+              "loc": "1:100-114",
+              "moduleId": 893,
+              "resolvedModuleId": 893
+            },
+            {
+              "moduleIdentifier": null,
+              "module": null,
+              "moduleName": null,
+              "resolvedModuleIdentifier": null,
+              "resolvedModule": null,
+              "type": "entry",
+              "active": true,
+              "explanation": "",
+              "userRequest": "E:\\project\\demo\\webpack-demo\\node_modules\\html-webpack-plugin\\lib\\loader.js!E:\\project\\demo\\webpack-demo\\node_modules\\html-webpack-plugin\\default_index.ejs",
+              "loc": "HtmlWebpackPlugin_0",
+              "moduleId": null,
+              "resolvedModuleId": null
+            },
+            {
+              "moduleIdentifier": null,
+              "module": null,
+              "moduleName": null,
+              "resolvedModuleIdentifier": null,
+              "resolvedModule": null,
+              "type": null,
+              "active": true,
+              "explanation": "used as library export",
+              "userRequest": null,
+              "moduleId": null,
+              "resolvedModuleId": null
+            }
+          ],
+          "usedExports": null,
+          "providedExports": null,
+          "optimizationBailout": [
+            "CommonJS bailout: module.exports is used directly at 1:100-114",
+            "ModuleConcatenation bailout: Module is not an ECMAScript module"
+          ],
+          "depth": 0
+        }
+      ],
+      "entrypoints": {
+        "HtmlWebpackPlugin_0": {
+          "name": "HtmlWebpackPlugin_0",
+          "chunks": [
+            443
+          ],
+          "assets": [
+            {
+              "name": "__child-HtmlWebpackPlugin_0"
+            }
+          ],
+          "filteredAssets": 0,
+          "assetsSize": null,
+          "auxiliaryAssets": [],
+          "filteredAuxiliaryAssets": 0,
+          "auxiliaryAssetsSize": 0,
+          "children": {},
+          "childAssets": {},
+          "isOverSizeLimit": false
+        }
+      },
+      "namedChunkGroups": {
+        "HtmlWebpackPlugin_0": {
+          "name": "HtmlWebpackPlugin_0",
+          "chunks": [
+            443
+          ],
+          "assets": [
+            {
+              "name": "__child-HtmlWebpackPlugin_0"
+            }
+          ],
+          "filteredAssets": 0,
+          "assetsSize": null,
+          "auxiliaryAssets": [],
+          "filteredAuxiliaryAssets": 0,
+          "auxiliaryAssetsSize": 0,
+          "children": {},
+          "childAssets": {},
+          "isOverSizeLimit": false
+        }
+      },
+      "errors": [],
+      "errorsCount": 0,
+      "warnings": [],
+      "warningsCount": 0,
+      "children": []
+    }
+  ]
+}
