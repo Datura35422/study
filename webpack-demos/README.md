@@ -46,3 +46,7 @@ if ('serviceWorker' in navigator)  {
 ## 编写Loader教程
 
 [简单示例](./make-loader/README.md)
+
+## 编写一个简易的bundler
+
+[简单示例](./bundler/bundler.js)

@@ -78,7 +78,7 @@ const generateCode = (entry) => {
     const graph = JSON.stringify(makeDependenciedGraph(entry));
     // 代码在闭包中执行避免污染外部环境
     // require无法在浏览器中直接运行，需要进行创建require方法
-    // exports存储导出的内容
+    // export存储导出的内容 会转存到exports对象中
     // 返回一个字符串
     // localRequire转换文件的相对路径返回真实路径
     // 递归调用到最内层的依赖文件，然后通过exports导出
