@@ -1,0 +1,20 @@
+{
+  "name": "projects",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx webpack --config ./projectA/webpack.config.js && npx webpack --config ./projectB/webpack.config.js",
+    "both": "npx webpack --env PROJECT=projectA && npx webpack --env PROJECT=projectB"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^5.36.1",
+    "webpack-cli": "^4.6.0",
+    "webpack-merge": "^5.7.3"
+  },
+  "dependencies": {
+    "loadsh": "^0.0.4"
+  }
+}
