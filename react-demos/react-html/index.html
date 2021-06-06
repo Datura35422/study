@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>react</title>
+    <!-- Load React. -->
+    <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+    <!-- https://developer.mozilla.org/zh-CN/docs/Web/HTML/Attributes/crossorigin -->
+    <!-- https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/script#attr-crossorigin -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body>
+    <div id="app"></div>
+    <div id="test"></div>
+    <script type="text/babel">
+        // 不使用组件的方式 
+        // let msg = 'hello world'
+
+        // function change() {
+        //     msg = 'hello react'
+        //     render()
+        // }
+
+        // function render() {
+        //     ReactDOM.render(
+        //         <div>
+        //             <h2>{ msg }</h2>
+        //             <button onClick={change}>change</button>    
+        //         </div>,
+        //         document.getElementById('app')
+        //     )
+        // }
+
+        // render()
+
+        // =================================================================
+        // 使用组件的方式
+        // const el = document.getElementById('app')
+        // class App extends React.Component {
+        //     constructor() {
+        //         super()
+        //         this.state = {
+        //             msg: 'hello world',
+        //             list: [1, 2, 3, 4]
+        //         }
+        //     }
+
+        //     // 写法一
+        //     render() {
+        //         const { state, change } = this
+        //         // 列表写法一
+        //         const listArr = []
+        //         for (let item of state.list) {
+        //             listArr.push(<li>{ item }</li>)
+        //         }
+
+        //         return (
+        //             <div>
+        //                 <h2>{ state.msg }</h2>
+        //                 <button onClick={change.bind(this)}>change</button>
+        //                 <ul>
+        //                     { /* 列表写法二 */}
+        //                     {
+        //                         state.list.map(item => {
+        //                             return (<li>{ item }</li>)
+        //                         })
+        //                     }
+        //                     { listArr }
+        //                 </ul>  
+        //             </div>
+        //         )
+        //     }
+
+        //     change() {
+        //         this.setState({
+        //             msg: 'hello react'
+        //         })
+        //     }
+
+        //     // 写法二
+        //     // render() {
+        //     //     const { state } = this
+        //     //     return (
+        //     //         <div>
+        //     //             <h2>{ state.msg }</h2>
+        //     //             <button onClick={() => this.setState({ msg: 'hello react' })}>change</button>    
+        //     //         </div>
+        //     //     )
+        //     // }
+        // }
+
+        // ReactDOM.render(<App />, el)
+
+        // ================================== 计数器 ============================
+        const el = document.getElementById('app')
+        class App extends React.Component {
+            constructor() {
+                super()
+                this.state = {
+                    counter: 0,
+                    list: [1, 2, 3, 4],
+                    flag: false
+                }
+                // 事件写法二
+                this.btnClick = this.btnClick.bind(this)
+            }
+
+            render() {
+                const { state: { counter, list }, increment, decrement, btnClick, btnClick2, onList } = this
+
+                return (
+                    <div>
+                        <h2 className="title">{ counter }</h2>
+                        {/* 事件写法一 */}
+                        <button style={{ marginRight: '10px' }} onClick={increment.bind(this)}>+1</button>
+                        <button style={{ marginRight: '10px', color: 'red' }} onClick={decrement.bind(this)}>-1</button>
+                        <br />
+                        <button onClick={btnClick}>点击事件2</button>
+                        <button onClick={btnClick2}>点击事件3</button>
+                        {/* 事件写法四 (推荐) 方便传参和调用事件 */}
+                        <button onClick={() => {
+                            console.log(counter); 
+                            this.btnClick2()
+                        }}>点击事件4</button>
+                        <br />
+                        <ul>
+                            {
+                                list.map((item, index) => {
+                                    return (
+                                        <li key={index} onClick={ e => onList(item, index, e) }>{ item }</li>
+                                    )
+                                })
+                            }
+                        </ul>
+                    </div>
+                )
+            }
+
+            increment() {
+                this.setState((state) => ({
+                    counter: ++state.counter
+                }))
+            }
+
+            decrement() {
+                this.setState((state) => ({
+                    counter: --state.counter
+                }))
+            }
+
+            btnClick(event) {
+                console.log(this.state.counter, event)
+            }
+
+            // 事件写法三 箭头函数中的this表示定义时的上下文
+            btnClick2 = () => {
+                console.log('click2: ', this.state.counter)
+            }
+
+            onList(item, index, event) {
+                console.log(item, index, event)
+            }
+        }
+
+        ReactDOM.render(<App />, el)
+
+    </script>
+    <!-- 不使用babel转义 jsx -->
+    <script>
+        const msg = React.createElement('h2', null, 'hello react')
+        const msg2 = /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h2", null, "msg"), /*#__PURE__*/React.createElement("button", null, "change"))
+
+        console.log(msg2) // 输出ReactElement 结果
+        ReactDOM.render(msg2, document.getElementById('test'))
+    </script>
+</body>
+</html>
