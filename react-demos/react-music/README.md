@@ -1,70 +1,39 @@
-# Getting Started with Create React App
+# react-music
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+codewhy react课程 高仿网易云音乐 web 项目
 
-## Available Scripts
+项目命令行
 
-In the project directory, you can run:
+```shell
+  yarn start
 
-### `yarn start`
+  yarn test
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+  yarn build
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+  yarn eject
+```
 
-### `yarn test`
+## 项目规范
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- 文件夹、文件名称统一小写、多个单词以连接符（-）连接；
+- JavaScript 变量名称采用小驼峰标识，常量全部使用大写字母，组件采用大驼峰；
+- CSS 采用普通 CSS 和 styled-component 结合来编写（全局采用普通CSS、局部采用 styled-component）；
+- 整个项目不在使用 class 组件，统一使用函数式组件和 Hooks；
+- 所有的函数式组件，为了避免不必要的渲染，全部使用 memo 进行包裹；
+- 组件名用项目组名的方式进行定义，加以区分；
+- 组件内部的状态，使用useState、useReducer；业务数据全部放在 redux中管理；
+- 函数组件内部基本按照如下顺序编写代码：
+  - 组件内部 state 管理；
+  - redux 的 hooks 代码；
+  - 其他组件 hooks 代码；
+  - 其他逻辑代码；
+  - 返回 JSX 代码；
+- redux 的代码规范如下：
+  - 每个人模块有自己独立的 reducer，通过 combineReducer 进行合并；
+  - 异步请求代码使用 redux-thunk，并且写在 actionCreators中；
+  - redux 直接采用 redux hooks方式编写，不再使用 connect；
+- 网络请求采用 axios ：
+  - 对 axios 进行二次封装；
+  - 所有的模块请求会放到一个请求文件中单独管理；
+- 项目使用部分 AntDesign 组件；
