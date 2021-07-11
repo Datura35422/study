@@ -1,6 +1,7 @@
 /* 导入 css依赖包模块 */
 @import '~normalize.css';
-/* @import '~antd/dist/antd.css'; */
+/* 导入 antd 样式 不需要在 js 中重复导入 */
+@import '~antd/dist/antd.css'; 
 
 /* 样式的重置 */
 body,
