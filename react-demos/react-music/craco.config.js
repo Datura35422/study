@@ -8,5 +8,10 @@ module.exports = {
       '@': resolve('src'),
       'components': resolve('src/components')
     }
-  }
+  },
+  // devServer: (devServerConfig, { env, paths, proxy, allowedHost }) => { 
+  //   return Object.assign(devServerConfig, {
+  //     port: 8080,
+  //   })
+  // },
 }

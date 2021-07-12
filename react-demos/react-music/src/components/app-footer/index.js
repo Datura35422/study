@@ -3,7 +3,7 @@ import React, { Fragment, memo } from 'react'
 import { 
   footerLinks, 
   footerImages,
-} from '@/services/local-data'
+} from '@/common/local-data'
 
 import { 
   FooterLeft, 

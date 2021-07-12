@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 
 import {
   headerLinks
-} from '@/services/local-data'
+} from '@/common/local-data'
 
 import { 
   Dropdown, 

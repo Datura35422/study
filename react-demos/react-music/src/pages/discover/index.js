@@ -4,7 +4,7 @@ import { renderRoutes } from "react-router-config"
 
 import { 
   dicoverMenu
-} from "@/services/local-data"
+} from "@/common/local-data"
 
 import {
   DiscoverWrapper,
