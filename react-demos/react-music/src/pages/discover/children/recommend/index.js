@@ -2,6 +2,8 @@ import React, { memo } from 'react'
 
 import RMTopBanner from './components/top-banners'
 import RMHotRecommend from './components/hot-recommend'
+import RMNewAlbum from './components/new-album'
+import RMRecommendRanking from './components/recommend-ranking'
 import {
     RecommendWrap,
     Content,
@@ -16,6 +18,8 @@ export default memo(function RMRecommend() {
             <Content className='w980'>
                 <RecommendLeft>
                     <RMHotRecommend />
+                    <RMNewAlbum />
+                    <RMRecommendRanking />
                 </RecommendLeft>
                 <RecommendRight></RecommendRight>
             </Content>
