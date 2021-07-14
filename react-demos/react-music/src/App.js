@@ -9,6 +9,7 @@ import store from '@/store'
 
 import RMAppHeader from '@/components/app-header'
 import RMAppFooter from '@/components/app-footer'
+import RMAppPlayBar from '@/pages/player/app-play-bar'
 
 export default memo(function App() {
   return (
@@ -17,6 +18,7 @@ export default memo(function App() {
         <RMAppHeader />
         { renderRoutes(routes) }
         <RMAppFooter />
+        <RMAppPlayBar />
       </HashRouter>
     </Provider>
   )
