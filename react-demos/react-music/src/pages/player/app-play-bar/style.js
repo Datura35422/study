@@ -3,6 +3,10 @@ import styled from 'styled-components'
 import progressBar from '@/assets/img/progress_bar.png'
 import spriteIcon from '@/assets/img/sprite_icon.png'
 
+import {
+  PLAY_SEQUENCE
+} from '@/pages/player/utils/constants'
+
 export const PlaybarWrapper = styled.div`
   position: fixed;
   z-index: 99;
@@ -150,9 +154,9 @@ export const Operator = styled.div`
     .loop {
       background-position: ${props => {
         switch(props.sequence) {
-          case 1:
+          case PLAY_SEQUENCE.RANDOM:
             return "-66px -248px";
-          case 2:
+          case PLAY_SEQUENCE.LOOP:
             return "-66px -344px";
           default:
             return "-3px -344px";

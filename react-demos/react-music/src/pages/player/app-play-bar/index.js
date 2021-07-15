@@ -5,7 +5,9 @@ import {
   DATA_PREFIX
 } from '../utils/constants'
 import {
-  getSongDetailAction,
+  changePlaySequenceAction,
+  changePlaySongAction,
+  getStoragePlayList,
 } from '../store/actionCreators'
 import {
   formatImgSize,
@@ -21,8 +23,6 @@ import {
   Operator,
 } from './style'
 
-const ids = 1499175682
-
 export default memo(function RMAppPlayBar() {
   // props and state
   // 播放时间数据单位统一为 ms
@@ -35,8 +35,12 @@ export default memo(function RMAppPlayBar() {
   // redux hooks
   const { 
     currentSong,
+    playList,
+    playSequence,
   } = useSelector(state => ({
-    currentSong: state.getIn([DATA_PREFIX, 'currentSong'])
+    currentSong: state.getIn([DATA_PREFIX, 'currentSong']),
+    playList: state.getIn([DATA_PREFIX, 'playList']),
+    playSequence: state.getIn([DATA_PREFIX, 'playSequence']),
   }), shallowEqual)
   const dispatch = useDispatch()
 
@@ -44,16 +48,29 @@ export default memo(function RMAppPlayBar() {
   const audioRef = useRef()
   const formatDateRule = useRef('mm:ss')
   useEffect(() => {
-    dispatch(getSongDetailAction({
-      ids
-    }))
-  }, [dispatch])
-  useEffect(() => {
+    if (Object.keys(currentSong).length === 0) {
+      return
+    }
     audioRef.current.src = formatPlayUrl(currentSong.id)
     setDuration(currentSong.dt)
-  }, [currentSong])
+    // chrome 初始自动播放会报错
+    audioRef.current.play().then(() => {
+      setIsPlaying(true)
+    }).catch(err => {
+      console.log(err)
+      setIsPlaying(false)
+    })
+  }, [currentSong, setIsPlaying])
+  useEffect(() => {
+    dispatch(getStoragePlayList())
+  }, [dispatch])
 
   // other handle
+  const replay = useCallback(() => {
+    audioRef.current.currentTime = 0
+    audioRef.current.play()
+  }, [])
+
   const play = useCallback(() => {
     if (!isPlaying) {
       audioRef.current.play()
@@ -81,6 +98,7 @@ export default memo(function RMAppPlayBar() {
 
   const sliderAfterChange = useCallback(e => {
     const currentTime = (e / 100) * duration
+    // 设置原生 DOM 的属性获取到原生 DOM 的实例之后进行设置
     audioRef.current.currentTime = currentTime / 1000 // s
     setCurrentTime(currentTime)
     setProgress(e)
@@ -91,13 +109,29 @@ export default memo(function RMAppPlayBar() {
     }
   }, [duration, isPlaying, play])
 
+  const onChangeSequence = useCallback(() => {
+    dispatch(changePlaySequenceAction(playSequence))
+  }, [dispatch, playSequence])
+
+  const onChangePlaySong = useCallback(flag => {
+    if (playList.length === 0) {
+      return
+    }
+    // 如果当前列表只有一首歌 则重新播放
+    if (playList.length === 1) {
+      replay()
+      return
+    }
+    dispatch(changePlaySongAction(flag))
+  }, [dispatch, playList, replay])
+
   return (
     <PlaybarWrapper className='sprite_player'>
       <div className='content w980'>
         <Control isPlaying={ isPlaying }>
-          <button className='sprite_player prev'></button>
+          <button className='sprite_player prev' onClick={() => onChangePlaySong(-1) }></button>
           <button className='sprite_player play' onClick={() => play() }></button>
-          <button className='sprite_player next'></button>
+          <button className='sprite_player next' onClick={() => onChangePlaySong(1) }></button>
         </Control>
         <PlayInfo>
           <div className='image'>
@@ -108,7 +142,11 @@ export default memo(function RMAppPlayBar() {
           <div className='info'>
             <div className='song'>
               <span>{ currentSong.name }</span>
-              <a className='singer-name' href='/todo'>{ currentSong?.ar?.[0]?.name || '' }</a>
+              {
+                currentSong?.ar?.length && currentSong.ar.map(item => (
+                  <a className='singer-name' href='/todo' key={ item.id }>{ item?.name || '' }</a>
+                ))
+              }
             </div>
             <div className='progress'>
               <Slider 
@@ -125,15 +163,15 @@ export default memo(function RMAppPlayBar() {
             </div>
           </div>
         </PlayInfo>
-        <Operator>
+        <Operator sequence={ playSequence }>
           <div className='left'>
             <button className='sprite_player btn favor'></button>
             <button className='sprite_player btn share'></button>
           </div>
           <div className='right sprite_player'>
             <button className='sprite_player btn volume'></button>
-            <button className='sprite_player btn loop'></button>
-            <button className='sprite_player btn playlist'>12</button>
+            <button className='sprite_player btn loop' onClick={() => onChangeSequence() }></button>
+            <button className='sprite_player btn playlist'>{ playList.length }</button>
           </div>
         </Operator>
       </div>

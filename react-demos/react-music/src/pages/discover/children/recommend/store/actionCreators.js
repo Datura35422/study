@@ -67,7 +67,6 @@ export const getNewAlbumsAction = params => {
 export const getRankingListAction = (params, type) => {
   return dispatch => {
     getRankingList(params).then(res => {
-      console.log(res)
       dispatch(changeRankingListAction(res.playlist, type))
     })
   }

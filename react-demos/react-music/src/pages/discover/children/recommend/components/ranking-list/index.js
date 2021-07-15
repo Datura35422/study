@@ -1,9 +1,13 @@
-import React, { memo } from 'react'
+import React, { memo, useCallback } from 'react'
+import { useDispatch } from 'react-redux'
 import PropTypes from 'prop-types'
 
 import {
   formatImgSize,
 } from '@/utils/format'
+import {
+  getSongDetailAction,
+} from '@/pages/player/store'
 
 import {
   RankingListWrapper
@@ -12,6 +16,13 @@ import {
 const RMRankingList = memo(function RMRankingList(props) {
   const { info } = props
   const tracks = info.tracks || []
+
+  const dispatch = useDispatch()
+  const onPlayItem = useCallback((item) => {
+    dispatch(getSongDetailAction({
+      ids: item.id
+    }))
+  }, [dispatch])
 
   return (
     <RankingListWrapper>
@@ -36,7 +47,7 @@ const RMRankingList = memo(function RMRankingList(props) {
               <div className='info'>
                 <span className='name text-nowrap'>{ item.name }</span>
                 <div className='operate'>
-                  <button className='btn sprite_02 play'></button>
+                  <button className='btn sprite_02 play' onClick={() => onPlayItem(item) }></button>
                   <button className='btn sprite_icon2 addto'></button>
                   <button className='btn sprite_02 favor'></button>
                 </div>
