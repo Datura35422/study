@@ -15,21 +15,21 @@ import {
   getStorage,
 } from '@/utils/storage'
 
-const changeCurrentSongAction = data => {
+function changeCurrentSongAction(data) {
   return {
     type: actionTypes.CHANGE_CURRENT_SONG,
     song: data
   }
 }
 
-const changeCurrentSongIndexAction = data => {
+function changeCurrentSongIndexAction(data) {
   return {
     type: actionTypes.CHANGE_CURRENT_SONG_INDEX,
     currentSongIndex: data
   }
 }
 
-const changePlayListAction = data => {
+function changePlayListAction(data) {
   setStorage(STORE_PLAY_LIST, data)
   return {
     type: actionTypes.CHANGE_PLAY_LIST,
@@ -37,7 +37,7 @@ const changePlayListAction = data => {
   }
 }
 
-export const changePlaySequenceAction = sequence => {
+export function changePlaySequenceAction(sequence) {
   switch (sequence) {
     case PLAY_SEQUENCE.ORDER:
       sequence = PLAY_SEQUENCE.RANDOM
@@ -55,7 +55,7 @@ export const changePlaySequenceAction = sequence => {
   }
 }
 
-export const changePlaySongAction = flag => {
+export function changePlaySongAction(flag) {
   // 播放上一首 / 下一首 flag: 1 / -1
   return (dispatch, getState) => {
     const state = getState().get(DATA_PREFIX)
@@ -90,7 +90,7 @@ export const changePlaySongAction = flag => {
   }
 }
 
-export const getSongDetailAction = params => {
+export function getSongDetailAction(params) {
   return (dispatch, getState) => {
     // 当用户点击播放时 先检测是否队列中已存在当前点击歌曲
     // 如果未存在则添加到播放队列最后的位置并播放
@@ -113,7 +113,7 @@ export const getSongDetailAction = params => {
   }
 }
 
-export const getStoragePlayList = () => {
+export function getStoragePlayList() {
   return (dispatch, getState) => {
     const playList = getState().getIn([DATA_PREFIX, 'playList'])
     const storeList = getStorage(STORE_PLAY_LIST)

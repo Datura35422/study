@@ -7,28 +7,28 @@ import {
   getRankingList,
 } from '@/apis/recommend'
 
-const changeTopBannersAction = data => {
+function changeTopBannersAction(data) {
   return {
     type: actionTypes.CHANGE_TOP_BANNER,
     topBanners: data
   }
 }
 
-const changeHotRecomendAction = data => {
+function changeHotRecomendAction(data) {
   return {
     type: actionTypes.CHANGE_HOT_RECOMMEND,
     hotRecommends: data
   }
 }
 
-const changeNewAlbumsAction = data => {
+function changeNewAlbumsAction(data) {
   return {
     type: actionTypes.CHANGE_NEW_ALBUMS,
     newAlbums: data
   }
 }
 
-const changeRankingListAction = (data, type) => {
+function changeRankingListAction(data, type) {
   const actionType = {
     up: actionTypes.CHANGE_UP_RANKING,
     new: actionTypes.CHANGE_NEW_RANKING,
@@ -40,7 +40,7 @@ const changeRankingListAction = (data, type) => {
   }
 }
 
-export const getTopBannersAction = () => {
+export function getTopBannersAction() {
   return dispatch => {
     getTopBanners().then(res => {
       dispatch(changeTopBannersAction(res.banners))
@@ -48,7 +48,7 @@ export const getTopBannersAction = () => {
   }
 }
 
-export const getHotRecommendsAction = params => {
+export function getHotRecommendsAction(params) {
   return dispatch => {
     getHotRecommends(params).then(res => {
       dispatch(changeHotRecomendAction(res.result))
@@ -56,7 +56,7 @@ export const getHotRecommendsAction = params => {
   }
 }
 
-export const getNewAlbumsAction = params => {
+export function getNewAlbumsAction(params) {
   return dispatch => {
     getNewAlbum(params).then(res => {
       dispatch(changeNewAlbumsAction(res.albums))
@@ -64,7 +64,7 @@ export const getNewAlbumsAction = params => {
   }
 }
 
-export const getRankingListAction = (params, type) => {
+export function getRankingListAction(params, type) {
   return dispatch => {
     getRankingList(params).then(res => {
       dispatch(changeRankingListAction(res.playlist, type))

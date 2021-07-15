@@ -1,6 +1,6 @@
 const storage = window.localStorage || localStorage || null
 
-export const setStorage = (key, value) => {
+export function setStorage(key, value) {
   if (!storage) {
     return
   }
@@ -11,7 +11,7 @@ export const setStorage = (key, value) => {
   }
 }
 
-export const getStorage = key => {
+export function getStorage(key) {
   const value = storage && storage.getItem(key)
   return value ? JSON.parse(value) : null
 }
