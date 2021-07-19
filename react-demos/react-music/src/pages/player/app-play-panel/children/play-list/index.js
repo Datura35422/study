@@ -1,5 +1,6 @@
 import React, { memo, useCallback } from 'react'
 import { shallowEqual, useDispatch, useSelector } from 'react-redux'
+import classnames from 'classnames'
 
 import {
   DATA_PREFIX
@@ -37,7 +38,7 @@ export default memo(function RMPlayList() {
       {
         playList && playList.map((item, index) => (
           <div 
-            className={ 'play-item' + ( currentSongIndex === index ? ' active' : '' ) } 
+            className={ classnames('play-item', { active: currentSongIndex === index }) } 
             key={ item.id }
             onClick={e => onPlayItem(item)}>
             <div>{ item.name }</div>

@@ -1,5 +1,6 @@
 import React, { memo, useRef, useEffect } from 'react'
 import { shallowEqual, useSelector } from 'react-redux'
+import classnames from 'classnames'
 
 import {
   scrollTo
@@ -40,7 +41,7 @@ export default memo(function RMLyricPanel() {
         {
           currentLyrics && currentLyrics.map((item, index) => (
             <div 
-              className={ 'lrc-item' + (currentLyricsIndex === index ? ' active' : '') } 
+              className={ classnames('lrc-item', { active : currentLyricsIndex === index }) } 
               key={ item.time }>
               { item.content }
             </div>
