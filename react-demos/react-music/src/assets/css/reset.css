@@ -138,6 +138,10 @@ button {
   background: url(../img/sprite_table.png) no-repeat 0 9999px;
 }
 
+.sprite_playlist {
+  background: url(../img/playlist_sprite.png) no-repeat 0 9999px;
+}
+
 .my_music {
   background: url(../img/mymusic.png) no-repeat 0 9999px;
 }

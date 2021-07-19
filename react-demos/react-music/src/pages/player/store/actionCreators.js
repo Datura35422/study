@@ -6,6 +6,7 @@ import {
 } from '../utils/constants'
 import {
   getSongDetail,
+  getLyric,
 } from '@/apis/player'
 import {
   randomNumber,
@@ -14,6 +15,9 @@ import {
   setStorage,
   getStorage,
 } from '@/utils/storage'
+import {
+  parseLyric
+} from '@/utils/lyric-parse'
 
 function changeCurrentSongAction(data) {
   return {
@@ -29,11 +33,29 @@ function changeCurrentSongIndexAction(data) {
   }
 }
 
+function changeCurrentLyricAction(data) {
+  return {
+    type: actionTypes.CHANGE_CURRENT_LYRIC,
+    currentLyrics: data
+  }
+}
+
 function changePlayListAction(data) {
   setStorage(STORE_PLAY_LIST, data)
   return {
     type: actionTypes.CHANGE_PLAY_LIST,
     playList: data
+  }
+}
+
+function getLyricAction(id) {
+  return dispatch => {
+    // 获取当前歌曲歌词
+    getLyric({
+      id
+    }).then(res => {
+      dispatch(changeCurrentLyricAction(parseLyric(res.lrc.lyric)))
+    })
   }
 }
 
@@ -52,6 +74,13 @@ export function changePlaySequenceAction(sequence) {
   return {
     type: actionTypes.CHANGE_PLAY_SEQUENCE,
     playSequence: sequence
+  }
+}
+
+export function changePlayerPanelAction(operator) {
+  return {
+    type: actionTypes.CHANGE_PLAYER_PANEL,
+    showPlayerPanel: operator
   }
 }
 
@@ -90,6 +119,13 @@ export function changePlaySongAction(flag) {
   }
 }
 
+export function changeCurrentLyricIndexAction(data) {
+  return {
+    type: actionTypes.CHANGE_CURRENT_LYRIC_INDEX,
+    currentLyricsIndex: data
+  }
+}
+
 export function getSongDetailAction(params) {
   return (dispatch, getState) => {
     // 当用户点击播放时 先检测是否队列中已存在当前点击歌曲
@@ -110,6 +146,7 @@ export function getSongDetailAction(params) {
         dispatch(changeCurrentSongAction(song))
       })
     }
+    dispatch(getLyricAction(ids))
   }
 }
 
@@ -121,6 +158,7 @@ export function getStoragePlayList() {
       dispatch(changePlayListAction(storeList))
       dispatch(changeCurrentSongIndexAction(0))
       dispatch(changeCurrentSongAction(storeList[0]))
+      dispatch(getLyricAction(storeList[0].id))
     }
   }
 }

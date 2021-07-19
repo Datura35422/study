@@ -5,3 +5,9 @@ export const getSongDetail = (params = {}) => {
     params
   })
 }
+
+export const getLyric = (params = {}) => {
+  return request.get(`/lyric`, {
+    params
+  })
+}

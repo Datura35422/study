@@ -6,6 +6,7 @@ import RMRanking from '@/pages/discover/children/ranking'
 import RMSongs from '@/pages/discover/children/songs'
 import RMDjradio from '@/pages/discover/children/djradio'
 import RMArtist from '@/pages/discover/children/artist'
+import RMPlayer from '@/pages/player'
 
 const base = '/discover'
 
@@ -36,6 +37,10 @@ const routes = [
   {
     path: `${base}/artist`,
     component: RMArtist,
+  },
+  {
+    path: `${base}/song`,
+    component: RMPlayer,
   },
 ]
 

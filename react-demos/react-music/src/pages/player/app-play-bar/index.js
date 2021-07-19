@@ -7,6 +7,8 @@ import {
 import {
   changePlaySequenceAction,
   changePlaySongAction,
+  changePlayerPanelAction,
+  changeCurrentLyricIndexAction,
   getStoragePlayList,
 } from '../store/actionCreators'
 import {
@@ -16,6 +18,7 @@ import {
 } from '@/utils/format'
 
 import { Slider } from 'antd'
+import RMAppPlayPanel from '../app-play-panel'
 import {
   PlaybarWrapper,
   Control,
@@ -37,10 +40,16 @@ export default memo(function RMAppPlayBar() {
     currentSong,
     playList,
     playSequence,
+    currentLyrics,
+    currentLyricsIndex,
+    showPlayerPanel,
   } = useSelector(state => ({
     currentSong: state.getIn([DATA_PREFIX, 'currentSong']),
     playList: state.getIn([DATA_PREFIX, 'playList']),
     playSequence: state.getIn([DATA_PREFIX, 'playSequence']),
+    currentLyrics: state.getIn([DATA_PREFIX, 'currentLyrics']),
+    currentLyricsIndex: state.getIn([DATA_PREFIX, 'currentLyricsIndex']),
+    showPlayerPanel: state.getIn([DATA_PREFIX, 'showPlayerPanel']),
   }), shallowEqual)
   const dispatch = useDispatch()
 
@@ -87,8 +96,18 @@ export default memo(function RMAppPlayBar() {
       const currentTime = e.target.currentTime * 1000 // s * 1000 -> ms
       setCurrentTime(currentTime)
       setProgress((currentTime / duration) * 100)
+      // 设置歌词
+      let currentIndex = 0
+      for (; currentIndex < currentLyrics.length; currentIndex++) {
+        if (currentTime <= currentLyrics[currentIndex].time) {
+          break
+        }
+      }
+      currentIndex = currentIndex - 1
+      // 防止重复设置index
+      currentLyricsIndex !== currentIndex && dispatch(changeCurrentLyricIndexAction(currentIndex))
     }
-  }, [duration, isChanging])
+  }, [duration, isChanging, currentLyrics, dispatch, currentLyricsIndex])
 
   // Slider 组件事件 传入子组件中
   const sliderChange = useCallback(e => {
@@ -124,6 +143,10 @@ export default memo(function RMAppPlayBar() {
     }
     dispatch(changePlaySongAction(flag))
   }, [dispatch, playList, replay])
+
+  const onShowPlayerPanel = useCallback(() => {
+    dispatch(changePlayerPanelAction(true))
+  }, [dispatch])
 
   return (
     <PlaybarWrapper className='sprite_player'>
@@ -171,10 +194,11 @@ export default memo(function RMAppPlayBar() {
           <div className='right sprite_player'>
             <button className='sprite_player btn volume'></button>
             <button className='sprite_player btn loop' onClick={() => onChangeSequence() }></button>
-            <button className='sprite_player btn playlist'>{ playList.length }</button>
+            <button className='sprite_player btn playlist' onClick={ onShowPlayerPanel }>{ playList.length }</button>
           </div>
         </Operator>
       </div>
+      { showPlayerPanel && <RMAppPlayPanel /> }
       <audio ref={ audioRef } onTimeUpdate={ timeupdate } />
     </PlaybarWrapper>
   )
