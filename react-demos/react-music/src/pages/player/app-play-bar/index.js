@@ -1,15 +1,17 @@
 import React, { memo, useEffect, useRef, useState, useCallback } from 'react'
 import { useSelector, useDispatch, shallowEqual } from 'react-redux'
+import { NavLink } from 'react-router-dom'
 
 import {
-  DATA_PREFIX
+  DATA_PREFIX,
+  PLAY_SEQUENCE,
 } from '../utils/constants'
 import {
   changePlaySequenceAction,
   changePlaySongAction,
   changePlayerPanelAction,
   changeCurrentLyricIndexAction,
-  getStoragePlayList,
+  getStoragePlayListAction,
 } from '../store/actionCreators'
 import {
   formatImgSize,
@@ -71,7 +73,7 @@ export default memo(function RMAppPlayBar() {
     })
   }, [currentSong, setIsPlaying])
   useEffect(() => {
-    dispatch(getStoragePlayList())
+    dispatch(getStoragePlayListAction())
   }, [dispatch])
 
   // other handle
@@ -109,6 +111,17 @@ export default memo(function RMAppPlayBar() {
     }
   }, [duration, isChanging, currentLyrics, dispatch, currentLyricsIndex])
 
+  // 歌曲播放自然结束
+  const timeEnded = useCallback(() => {
+    // 判断当前播放模式
+    if (playSequence === PLAY_SEQUENCE.LOOP || playList.length === 1) {
+      // 单曲循环
+      replay()
+    } else {
+      dispatch(changePlaySongAction(1))
+    }
+  }, [playSequence, playList, replay, dispatch])
+
   // Slider 组件事件 传入子组件中
   const sliderChange = useCallback(e => {
     setProgress(e)
@@ -144,9 +157,9 @@ export default memo(function RMAppPlayBar() {
     dispatch(changePlaySongAction(flag))
   }, [dispatch, playList, replay])
 
-  const onShowPlayerPanel = useCallback(() => {
-    dispatch(changePlayerPanelAction(true))
-  }, [dispatch])
+  const onSwitchPlayerPanel = useCallback(() => {
+    dispatch(changePlayerPanelAction(!showPlayerPanel))
+  }, [dispatch, showPlayerPanel])
 
   return (
     <PlaybarWrapper className='sprite_player'>
@@ -158,9 +171,11 @@ export default memo(function RMAppPlayBar() {
         </Control>
         <PlayInfo>
           <div className='image'>
-            <img 
-              src={ formatImgSize(currentSong?.al?.picUrl || '', 35) } 
-              alt={ currentSong.name } />
+            <NavLink to='/discover/song'>
+              <img 
+                src={ formatImgSize(currentSong?.al?.picUrl || '', 35) } 
+                alt={ currentSong.name } />
+            </NavLink>
           </div>
           <div className='info'>
             <div className='song'>
@@ -194,12 +209,12 @@ export default memo(function RMAppPlayBar() {
           <div className='right sprite_player'>
             <button className='sprite_player btn volume'></button>
             <button className='sprite_player btn loop' onClick={() => onChangeSequence() }></button>
-            <button className='sprite_player btn playlist' onClick={ onShowPlayerPanel }>{ playList.length }</button>
+            <button className='sprite_player btn playlist' onClick={ onSwitchPlayerPanel }>{ playList.length }</button>
           </div>
         </Operator>
       </div>
       { showPlayerPanel && <RMAppPlayPanel /> }
-      <audio ref={ audioRef } onTimeUpdate={ timeupdate } />
+      <audio ref={ audioRef } onTimeUpdate={ timeupdate } onEnded={ timeEnded } />
     </PlaybarWrapper>
   )
 })

@@ -42,7 +42,7 @@ export default memo(function RMLyricPanel() {
           currentLyrics && currentLyrics.map((item, index) => (
             <div 
               className={ classnames('lrc-item', { active : currentLyricsIndex === index }) } 
-              key={ item.time }>
+              key={ index }>
               { item.content }
             </div>
           ))

@@ -7,6 +7,8 @@ import {
 import {
   getSongDetail,
   getLyric,
+  getSimiPlaylist,
+  getSimiSongs,
 } from '@/apis/player'
 import {
   randomNumber,
@@ -40,7 +42,21 @@ function changeCurrentLyricAction(data) {
   }
 }
 
-function changePlayListAction(data) {
+function changeSimiPlaylistAction(data) {
+  return {
+    type: actionTypes.CHANGE_SIMI_PLAYLIST,
+    simiPlaylist: data
+  }
+}
+
+function changeSimiSongsAction(data) {
+  return {
+    type: actionTypes.CHANGE_SIMI_SONGS,
+    simiSongs: data
+  }
+}
+
+export function changePlayListAction(data) {
   setStorage(STORE_PLAY_LIST, data)
   return {
     type: actionTypes.CHANGE_PLAY_LIST,
@@ -150,15 +166,32 @@ export function getSongDetailAction(params) {
   }
 }
 
-export function getStoragePlayList() {
+export function getStoragePlayListAction() {
   return (dispatch, getState) => {
     const playList = getState().getIn([DATA_PREFIX, 'playList'])
     const storeList = getStorage(STORE_PLAY_LIST)
-    if (storeList && playList.length === 0) {
+    if (storeList && storeList.length > 0 && playList.length === 0) {
       dispatch(changePlayListAction(storeList))
       dispatch(changeCurrentSongIndexAction(0))
       dispatch(changeCurrentSongAction(storeList[0]))
       dispatch(getLyricAction(storeList[0].id))
     }
+  }
+}
+
+export function getSimiPlaylistAction(params) {
+  return dispatch => {
+    // getSimiSongs
+    getSimiPlaylist(params).then(res => {
+      dispatch(changeSimiPlaylistAction(res.playlists || []))
+    })
+  }
+}
+
+export function getSimiSongsAction(params) {
+  return dispatch => {
+    getSimiSongs(params).then(res => {
+      dispatch(changeSimiSongsAction(res.songs || []))
+    })
   }
 }

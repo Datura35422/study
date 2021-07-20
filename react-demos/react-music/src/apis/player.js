@@ -11,3 +11,15 @@ export const getLyric = (params = {}) => {
     params
   })
 }
+
+export const getSimiPlaylist = (params = {}) => {
+  return request.get(`/simi/playlist`, {
+    params
+  })
+}
+
+export const getSimiSongs = (params = {}) => {
+  return request.get(`/simi/song`, {
+    params
+  })
+}

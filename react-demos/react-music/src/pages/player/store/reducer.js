@@ -10,8 +10,10 @@ const defaultState = Map({
   playList: [],
   playSequence: PLAY_SEQUENCE.ORDER,
   currentLyrics: [],
-  currentLyricsIndex: 0,
-  showPlayerPanel: true,
+  currentLyricsIndex: -1,
+  showPlayerPanel: false,
+  simiPlaylist: [],
+  simiSongs: [],
 })
 
 function reducer(state = defaultState, action) {
@@ -30,6 +32,10 @@ function reducer(state = defaultState, action) {
       return state.set('currentLyricsIndex', action.currentLyricsIndex)
     case actionTypes.CHANGE_PLAYER_PANEL: 
       return state.set('showPlayerPanel', action.showPlayerPanel)
+    case actionTypes.CHANGE_SIMI_PLAYLIST: 
+      return state.set('simiPlaylist', action.simiPlaylist)
+    case actionTypes.CHANGE_SIMI_SONGS: 
+      return state.set('simiSongs', action.simiSongs)
     default:
       return state
   }

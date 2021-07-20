@@ -43,7 +43,7 @@ export default memo(function RMPlayList() {
             onClick={e => onPlayItem(item)}>
             <div>{ item.name }</div>
             <div className='right'>
-              <div className='singer text-nowrap'>{ item.ar && item.ar[0].name }</div>
+              <div className='singer text-nowrap'>{ item?.ar?.[0].name }</div>
               <div className='duration'>{ formatDate(item.dt, 'mm:ss') }</div>
               {/* TODO: 歌曲来源 */}
               <i className='sprite_playlist link'></i>

@@ -13,7 +13,7 @@ export const PannelWrapper = styled.div`
   .lrc-content {
     .lrc-item {
       width: 100%;
-      height: 32px;
+      min-height: 32px;
       text-align: center;
       color: #989898;
 

@@ -2,6 +2,9 @@ import React, { memo } from 'react'
 import { useSelector, shallowEqual } from 'react-redux'
 
 import {
+  formatImgSize,
+} from '@/utils/format'
+import {
   DATA_PREFIX
 } from '../utils/constants'
 
@@ -17,13 +20,11 @@ export default memo(function RMAppPlayPanel() {
     currentSong: state.getIn([DATA_PREFIX, 'currentSong'])
   }), shallowEqual)
 
-  console.log(currentSong)
-
   return (
     <PanelWrapper>
       <RMPlayHeader />
       <div className='main'>
-        { currentSong?.al?.picUrl && <img className='image' src={ currentSong.al.picUrl } alt='' /> }
+        { currentSong?.al?.picUrl && <img className='image' src={ formatImgSize(currentSong.al.picUrl, 980) } alt='' /> }
         <RMPlayList />
         <RMLyricPanel />
       </div>
