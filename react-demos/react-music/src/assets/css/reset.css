@@ -142,14 +142,6 @@ button {
   background: url(../img/playlist_sprite.png) no-repeat 0 9999px;
 }
 
-.my_music {
-  background: url(../img/mymusic.png) no-repeat 0 9999px;
-}
-
-.not-login {
-  background: url(../img/notlogin.jpg) no-repeat 0 9999px;
-}
-
 .image_cover {
   position: absolute;
   left: 0;

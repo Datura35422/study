@@ -9,7 +9,7 @@ export const headerLinks = [
   },
   {
     title: '朋友',
-    link: '/friend',
+    link: '/friends',
   },
   {
     title: '商城',
