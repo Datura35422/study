@@ -2,9 +2,11 @@
 
 参考链接：
 
-https://webpack.js.org/guides/author-libraries/#root
+<https://webpack.js.org/guides/author-libraries/#root>
 
-https://webpack.js.org/configuration/externals/
+中文版：<https://webpack.docschina.org/guides/author-libraries/#root>
+
+<https://webpack.js.org/configuration/externals/>
 
 #### 环境
 
@@ -12,12 +14,13 @@ https://webpack.js.org/configuration/externals/
 
 - webpack-cli
 
-
 #### 发布
 
 注册npm账号
 
-在命令行里添加 `npm adduser` https://docs.npmjs.com/cli/v7/commands/npm-adduser
+在命令行里添加 `npm adduser` <https://docs.npmjs.com/cli/v7/commands/npm-adduser>
+
+如果第二次发布就只需要登录 `npm install`
 
 发布 `npm publish`
 
