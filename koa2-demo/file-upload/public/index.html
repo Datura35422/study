@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>canvas</title>
+  <link rel="stylesheet" href="https://yarnpkg.com/en/package/normalize.css">
+  <style type="text/css">
+    .container {
+      position: relative;
+    }
+    .center {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .upload-wrap {
+      width: 400px;
+      height: 220px;
+      border: 1px dashed #333;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .upload-wrap > div {
+      width: 100%;
+      height: 100%;
+    }
+    .btn-wrap {
+      margin: 20px 0;
+    }
+    .btn {
+      display: inline-block;
+      padding: 0;
+      margin: 0 10px;
+      width: 60px;
+      height: 32px;
+      line-height: 32px;
+      font-size: 12px;
+      text-align: center;
+      color: #333;
+      background-color: #fff;
+      border: 1px solid #333;
+      border-radius: 6px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    canvas {
+      min-width: 200px;
+      min-height: 200px;
+    }
+    .text {
+      max-width: 600px;
+      word-break: break-all;
+    }
+    img {
+      max-width: 400px;
+      height: auto;
+    }
+    .loading {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100px;
+      height: 100px;
+      transform: translate(-50%,-50%);
+    }
+    .sk-chase {
+      width: 40px;
+      height: 40px;
+      position: relative;
+      animation: sk-chase 2.5s infinite linear both;
+    }
+
+    .sk-chase-dot {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0; 
+      animation: sk-chase-dot 2.0s infinite ease-in-out both; 
+    }
+
+    .sk-chase-dot:before {
+      content: '';
+      display: block;
+      width: 25%;
+      height: 25%;
+      background-color: #333;
+      border-radius: 100%;
+      animation: sk-chase-dot-before 2.0s infinite ease-in-out both; 
+    }
+
+    .sk-chase-dot:nth-child(1) { animation-delay: -1.1s; }
+    .sk-chase-dot:nth-child(2) { animation-delay: -1.0s; }
+    .sk-chase-dot:nth-child(3) { animation-delay: -0.9s; }
+    .sk-chase-dot:nth-child(4) { animation-delay: -0.8s; }
+    .sk-chase-dot:nth-child(5) { animation-delay: -0.7s; }
+    .sk-chase-dot:nth-child(6) { animation-delay: -0.6s; }
+    .sk-chase-dot:nth-child(1):before { animation-delay: -1.1s; }
+    .sk-chase-dot:nth-child(2):before { animation-delay: -1.0s; }
+    .sk-chase-dot:nth-child(3):before { animation-delay: -0.9s; }
+    .sk-chase-dot:nth-child(4):before { animation-delay: -0.8s; }
+    .sk-chase-dot:nth-child(5):before { animation-delay: -0.7s; }
+    .sk-chase-dot:nth-child(6):before { animation-delay: -0.6s; }
+
+    @keyframes sk-chase {
+      100% { transform: rotate(360deg); } 
+    }
+
+    @keyframes sk-chase-dot {
+      80%, 100% { transform: rotate(360deg); } 
+    }
+
+    @keyframes sk-chase-dot-before {
+      50% {
+        transform: scale(0.4); 
+      } 100%, 0% {
+        transform: scale(1.0); 
+      } 
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container center">
+    <div class="upload-wrap">
+      <div id="dropZone" class="center">
+        <svg t="1631641001933" 
+          class="icon" 
+          viewBox="0 0 1024 1024" 
+          version="1.1" 
+          xmlns="http://www.w3.org/2000/svg" 
+          p-id="2204" 
+          width="100" 
+          height="100">
+          <path d="M738.7 61H285.3C172.2 61 80.2 153 80.2 266v492c0 113.1 92 205.1 205.1 205.1h453.4c113.1 0 205.1-92 205.1-205.1V266c0-113-92-205-205.1-205z m150.7 697c0 83.1-67.6 150.7-150.7 150.7H285.3c-83.1 0-150.7-67.6-150.7-150.7V266c0-83.1 67.6-150.7 150.7-150.7h453.4c83.1 0 150.7 67.6 150.7 150.7v492z" fill="#494949" p-id="2205"></path><path d="M392.6 635c-0.4 0-0.9-0.1-1.3-0.1-0.2 0-0.4 0.1-0.7 0.1h2z" fill="#494949" p-id="2206"></path><path d="M647.6 421.5c-24.5-52.9-77.8-87-136.3-87-58.6 0-111.9 34.2-136.4 87.2-50.4 8.6-89.7 54.8-89.7 105.9 0 58.8 47.5 106.6 106 107.3 12.2-0.4 22-10.3 22-22.6 0-12.5-10.2-22.7-22.7-22.7h2c-34.2 0-62-27.8-62-62 0-33.5 27.2-61.3 60.7-61.9 9.5-0.2 17.9-6.3 21-15.3 14.6-42.2 54.4-70.5 99.1-70.5 44.6 0 84.4 28.3 99.1 70.5 3.2 9.1 11.7 15.2 21.3 15.2 34 0.2 61.6 28 61.6 62 0 32.8-25.6 60-58.4 61.9-0.4 0-0.8 0-1.2 0.1h-0.5c-12.5 0-22.7 10.2-22.7 22.7s10.2 22.7 22.7 22.7h2.9c1 0 2.9-0.1 3.6-0.3 55.4-4.4 98.9-51.4 98.9-107 0.1-51.9-39.8-98.3-91-106.2z" fill="#494949" p-id="2207"></path><path d="M527.3 531.9c-1-1-2-1.8-3.5-2.8l-1.2-0.7c-0.6-0.3-1.1-0.6-1.7-0.9-0.6-0.2-1.1-0.4-2.3-0.8l-1.4-0.4c-1.3-0.3-2.6-0.4-3.9-0.4-1.3 0-2.6 0.1-3.9 0.4-0.5 0.1-0.9 0.2-1.8 0.5-0.6 0.2-1.3 0.4-1.8 0.6-0.6 0.2-1.1 0.5-2.2 1.1l-1.3 0.7c-1.1 0.7-2.1 1.6-3 2.5l-54 54c-3.8 3.7-5.8 8.7-5.8 14.1 0 5.3 2.1 10.3 5.8 14.1 3.6 3.6 8.7 5.7 14.1 5.7 5.3 0 10.4-2.1 14-5.7l20.1-20.1V724c0 11 8.9 19.9 19.9 19.9 11 0 19.9-8.9 19.9-19.9V593.9l20.1 20.1c7.2 7.2 20.9 7.2 28.1 0 3.8-3.8 5.8-8.7 5.8-14.1 0-5.3-2.1-10.3-5.8-14.1l-54.2-53.9z" fill="#494949" p-id="2208"></path>
+        </svg>
+        <p>点击或拖拽上传单张图片</p>
+      </div>
+      <input id="input" type="file" accept="image/jpg,image/jpeg,image/png" style="display: none" />
+    </div>
+    <div id="btn" class="btn-wrap">
+      <button class="btn" name="btn1">按钮1</button>
+      <a id="download" class="btn" name="btn2" download="xxx.png" >按钮2</a>
+      <button class="btn" name="btn3">按钮3</button>
+    </div>
+    
+    <canvas id="canvas"></canvas>
+    <div id="text" class="text"></div>
+    <img id="img" />
+    <div id="loading" class="loading center hidden">
+      <div class="sk-chase">
+        <div class="sk-chase-dot"></div>
+        <div class="sk-chase-dot"></div>
+        <div class="sk-chase-dot"></div>
+        <div class="sk-chase-dot"></div>
+        <div class="sk-chase-dot"></div>
+        <div class="sk-chase-dot"></div>
+      </div>
+    </div>
+  </div>
+  <script src="js/base64.js"></script>
+  <script>
+    (function() {
+      const inputEl = document.getElementById('input');
+      const dropZone = document.getElementById('dropZone');
+      const downloadEl = document.getElementById('download');
+      const canvas = document.getElementById('canvas');
+      const btnEl = document.getElementById('btn');
+      const textEl = document.getElementById('text');
+      const imgEl = document.getElementById('img');
+      const loadingEl = document.getElementById('loading');
+
+      const base = new Base64();
+
+      let file = null
+      let imgData = {}
+
+      // 必须阻止dragenter和dragover事件的默认行为，这样才能触发 drop 事件
+      function fileSelect(evt) {
+        evt.preventDefault();
+        file = evt.dataTransfer.files[0]; // 文件对象
+        readFile(file);
+      }
+
+      function dragOver(evt) {
+        evt.preventDefault(); // 防止默认事件
+        // https://developer.mozilla.org/zh-CN/docs/Web/API/DataTransfer/dropEffect
+        evt.dataTransfer.dropEffect = 'copy'; // 获取当前选定的拖放操作类型或者设置的为一个新的类型。值必须为  none, copy, link 或 move。
+      }
+
+      // 监听器
+      // 当将元素或文本选择拖动到有效放置目标（每几百毫秒）上时，会触发此事件。
+      dropZone.addEventListener('dragover', dragOver, false);
+      // 拖动元素或选择文本时触发此事件。
+      dropZone.addEventListener('drop', fileSelect, false);
+      dropZone.addEventListener('click', () => {
+        inputEl.click();
+      }, false);
+      inputEl.addEventListener('change', e => {
+        file = e.target.files[0];
+        readFile(file)
+      }, false);
+      btnEl.addEventListener('click', async e => {
+        switch (e.target.name) {
+          case 'btn1':
+            // console.log('btn', atob(imgData.base64.replace(/^data:.+;base64,/, '')))
+            if (!imgData.base64) {
+              return
+            }
+            textEl.innerText = imgData.base64;
+            copyPageUrl(imgData.base64);
+            return;
+          case 'btn3':
+          // btn 3 https://www.infoq.cn/article/2eiblpleq524afshheqi
+            if (file === null) {
+              return
+            }
+            upload(file)
+            break;
+          default:
+            break;
+        }
+      });
+
+      function readFile(file) {
+        if(!/image\/\w+/.test(file.type)){
+            return false;
+        }
+        loadingEl.classList.remove('hidden');
+        const reader = new FileReader();
+        reader.readAsDataURL(file); // 转化成base64数据类型
+        reader.onload = function(e) {
+          const imgBase64 = e.target.result;
+          downloadEl.href = imgBase64;
+          imgData.base64 = imgBase64;
+          onloadImg(imgBase64);
+        }
+      }
+
+      function onloadImg(image) {
+        const img = new Image();
+        img.onload = function() {
+          const { width, height } = img;
+          canvas.width = width > 400 ? 400 : width;
+          canvas.height = canvas.width === 400 ? 400 / width * height : height;
+          Object.assign(imgData, {
+            width,
+            height
+          })
+          draw(img, canvas.width, canvas.height);
+        }
+        img.src = image;
+      }
+
+      function draw(image, width = 0, height = 0) {
+        if (canvas.getContext) {
+          
+          const ctx = canvas.getContext('2d');
+          // 绘制图像
+          width > 0 ? ctx.drawImage(image, 0, 0, width, height) : ctx.drawImage(image, 0, 0);
+          // 取得图像数据
+          const imageData = ctx.getImageData(0, 0, image.width, image.height);
+          img2Base64(imageData)
+
+          const data = imageData.data;
+          for (let i=0, len = data.length; i < len; i += 4) {
+            const red = data[i];
+            const green = data[i+1];
+            const blue = data[i+2];
+            const alpha = data[i+3];
+            // 取得 RGB 平均值
+            const average = Math.floor((red + green + blue) / 3);
+            data[i] = average;
+            data[i+1] = average;
+            data[i+2] = average;
+          }
+          
+          imageData.data = data;
+          ctx.putImageData(imageData, 0, 0);
+          loadingEl.classList.add('hidden')
+          console.log('after: ', loadingEl.classList)
+        }
+      }
+
+      function upload(file) {
+        if (!file || file.length > 1) {
+          return
+        }
+        const formData = new FormData();
+        formData.append('file', file);
+        // const img = base642img(imgData.base)
+        // console.log('img: ', img)
+        formData.append('file', img);
+        const xhr = new XMLHttpRequest();
+
+        xhr.onreadystatechange = function() {
+          if (xhr.readyState == 4) {
+            if ((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304) {
+              const { url, hash } = JSON.parse(xhr.responseText)
+              img.src = url
+              alert(`上传成功，hash值：${hash}`)
+            } else {
+              console.error('error: ', xhr.status)
+            }
+          }
+        }
+        xhr.open('POST', '/upload');
+        
+        xhr.timeout = 10000; // 设置 10 秒超时
+        xhr.ontimeout = function() {
+          console.log("Request did not return in a second.");
+        };
+        xhr.send(formData)
+      }
+
+      // 剪切板
+      async function copyPageUrl(text) {
+        try {
+          await navigator.clipboard.writeText(text);
+        } catch (err) {
+          console.error('Failed to copy: ', err);
+        }
+      }
+
+      // 编码
+      function img2Base64(img) {
+        const { data, width, height } = img
+        let bin = '';
+        for (let i = 0; i < data.length; i++) {
+            bin += base.numToString(data[i]);
+        }
+        bin = bin + base.stringToBin('$$' + width + ',' + height + '$$');
+        imgData.base = base.binToBase64(bin);
+      }
+
+      // 解码
+      function base642img(data) {
+        const str = base.BinToStr(base.base64ToBin(data));
+        const imgWidth = str.match(/\$\$(\d+),(\d+)\$\$$/, '')[1];
+        const imgHeight = str.match(/\$\$(\d+),(\d+)\$\$$/, '')[2]
+        const imgData = base.base64ToBin(data).replace(base.stringToBin('$$' + imgWidth + ',' + imgHeight + '$$'), '');
+
+        const ImageDataArray = new Uint8ClampedArray(imgWidth * imgHeight * 4);
+        for (let i = 0; i < ImageDataArray.length; i++) {
+            ImageDataArray[i] = parseInt(imgData.substr(i * 8, 8), 2);
+        }
+        return new ImageData(ImageDataArray, imgWidth, imgHeight);
+      }
+    })()
+  </script>
+</body>
+</html>
