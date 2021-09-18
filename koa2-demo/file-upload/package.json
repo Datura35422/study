@@ -11,6 +11,9 @@
   "license": "ISC",
   "dependencies": {
     "@koa/router": "^10.1.1",
+    "crypto-js": "^4.1.1",
+    "image-size": "^1.0.0",
+    "images": "^3.2.3",
     "koa": "^2.13.1",
     "koa-body": "^4.2.0",
     "koa-static": "^5.0.0"
