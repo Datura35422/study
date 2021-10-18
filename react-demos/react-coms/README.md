@@ -30,3 +30,21 @@ yarn add node-sass
 disable 状态
 
 事件
+
+## 测试
+
+### 相关链接
+
+react test：<https://zh-hans.reactjs.org/docs/test-utils.html>
+
+react-testing-library：<https://testing-library.com/docs/react-testing-library/intro/>
+
+jest：<https://jestjs.io/zh-Hans/>
+
+### 运行
+
+创建 `*.test.tsx` 文件或 `test` 文件夹，运行命令行之后，代码会自动检测并运行测试文件
+
+```shell
+npm run test
+```
