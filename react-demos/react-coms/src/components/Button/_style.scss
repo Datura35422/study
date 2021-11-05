@@ -1,5 +1,7 @@
+
+
 .btn {
-  @include button-size($btn-padding-y, $btn-padding-x, $btn-font-size, $border-raduis);
+  @include button-size($btn-padding-y, $btn-padding-x, $btn-font-size, $border-radius);
   position: relative;
   display: inline-block;
   font-weight: $btn-font-weight;
@@ -29,10 +31,10 @@
 }
 
 .btn-lg {
-  @include button-size($btn-padding-y-lg, $btn-padding-x-lg, $btn-font-size, $border-raduis);
+  @include button-size($btn-padding-y-lg, $btn-padding-x-lg, $btn-font-size, $border-radius);
 }
 .btn-sm {
-  @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $btn-font-size, $border-raduis);
+  @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $btn-font-size, $border-radius);
 }
 
 .btn-primary {
