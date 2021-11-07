@@ -35,7 +35,7 @@ const Menu: React.FC<MenuProps> = ({
     onSelect: handleClick
   }
   return (
-    <ul className={classes} style={style}>
+    <ul className={classes} style={style} data-testid="test-menu">
       <MenuContext.Provider value={passedContext}>
         {children}
       </MenuContext.Provider>
