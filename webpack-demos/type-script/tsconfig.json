@@ -3,6 +3,8 @@
     "outDir": "./dist",
     "module": "es6",
     "target": "es5",
-    "allowJS": true
+    // https://www.typescriptlang.org/tsconfig#JavaScript_Support_6247
+    "allowJs": true,
+    "checkJs": true
   }
 }

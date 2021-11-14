@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge, chrome=1">
+    <title>debounce</title>
+    <!-- <style>
+        #container{
+            width: 100%; line-height: 200px; text-align: center; color: #fff; background-color: #444; font-size: 30px;
+        }
+        .normal {
+            height: 200px;
+        }
+        .small {
+            height: 100px;
+        }
+        .transition {
+            height: 200px;
+            transition: all 1s;
+        }
+    </style> -->
+</head>
+
+<body>
+    <div>
+        <!-- <a href="#/home">首页</a>
+        <a href="#/about">关于</a> -->
+        <a href="/home">首页</a>
+        <a href="/about">关于</a>
+        <button onclick="onChangeHash()">改变hash</button>
+    </div>
+    <div id="container" class="normal"></div>
+    <script>
+        // var node = document.querySelector('#container')
+        // node.onmouseover = function() {
+        //     console.log('onmouseover')
+        //     node.className = 'small'
+        //     console.log('small', node.className)
+        //     // console.log(node.clientHeight)
+        //     node.className = 'transition'
+        //     console.log('transition', node.className)
+        // }
+        // console.log(node)
+
+        // window.onpopstate = function(e) {
+        //     alert(2);
+        // }
+
+        // node.addEventListener('click', function() {
+        //     let stateObj = {
+        //         foo: "bar",
+        //     };
+
+        //     history.pushState(stateObj, "page 2", "throttle.html");
+        //     // window.location.hash = 'dom.html'
+        // })
+        window.addEventListener('hashchange', function() {
+            console.log('The hash has changed!')
+        }, false);
+        
+        console.log(window.location.href)
+        function onChangeHash() {
+            console.log('onChangeHash')
+            // window.location.href = window.location.href
+            window.location.reload()
+        }
+
+        // 只能监听到 history 堆栈中已有的页面项改变
+        window.addEventListener('popstate', urlChange)
+
+        const aEls = document.getElementsByTagName('a')
+        for (let el of aEls) {
+            el.addEventListener('click', function(e) {
+                e.preventDefault()
+                const href = el.getAttribute('href')
+                // 添加 hash 值
+                // window.location.hash = href
+                // location.hash = href
+                console.log(href)
+                history.pushState({}, '', href)
+                // state改变 手动 改变内容
+                urlChange()
+            })
+        }
+
+        const contentEl = document.getElementById('container')
+        function urlChange() {
+            switch (location.pathname) {
+                case '/home':
+                    contentEl.innerHTML = 'home'
+                    break
+                case '/about':
+                    contentEl.innerHTML = 'about' 
+                    break
+                default:
+                    contentEl.innerHTML = '' 
+                    break
+            }
+        }
+    </script>
+</body>
+
+</html>
