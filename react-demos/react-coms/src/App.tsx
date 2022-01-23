@@ -2,6 +2,7 @@ import React from 'react';
 import Button, { ButtonType, ButtonSize } from './components/Button/button'
 import Menu from './components/Menu/menu'
 import MenuItem from './components/Menu/menuItem'
+import SubMenu from './components/Menu/subMenu'
 
 function App() {
   return (
@@ -15,10 +16,13 @@ function App() {
       </div>
       <hr />
       <div>
-        <Menu onSelect={(index) => { alert(index) }}>
-          <MenuItem index={1}>menu 1</MenuItem>
-          <MenuItem index={2}>menu 2</MenuItem>
-          <MenuItem index={3}>menu 3</MenuItem>
+        <Menu defaultIndex='0' onSelect={(index) => { alert(index) }} mode="vertical" defaultOpenMenus={['3']}>
+          <MenuItem>menu 1</MenuItem>
+          <MenuItem>menu 2</MenuItem>
+          <MenuItem>menu 3</MenuItem>
+          <SubMenu title="SubMenu">
+            <MenuItem>dropdown 1</MenuItem>
+          </SubMenu>
         </Menu>
       </div>
     </div>

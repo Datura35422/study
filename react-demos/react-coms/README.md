@@ -48,3 +48,32 @@ jest：<https://jestjs.io/zh-Hans/>
 ```shell
 npm run test
 ```
+
+
+### 课程中有些 👎 的地方
+
+#### 关于 displayName 的使用
+
+displayName 不是必须手动定义的，可以利用自动推断进行设置，一般使用的情况在于高阶组件中使用
+
+相关链接：https://zh-hans.reactjs.org/docs/react-component.html#displayname
+
+#### 关于 defaultProps 的使用
+
+有 ts 进行声明 props 传入类型了，就可以省略这一步了，或者使用 ES6 方法中的解构预设值，可以避免去再维护 defaultProps 对象。
+
+#### 关于变量命名问题
+
+相关参考来自于《代码简洁之道》，使用一个错误的英文拼写是非常糟糕的一件事，代码命名尽量清晰并准确。
+
+避免 follow 一些不好的命名方式。
+
+#### 关于魔术字符串
+
+有些地方需要消灭魔术字符串，使用 ts 的枚举值进行优化
+
+#### 关于使用断言
+
+应该谨慎使用断言，在处理 undefined 的时候应该使用 || 进行默认值处理。
+
+除非是 ts 无法进行推断得出类型的时候可以进行使用。
