@@ -31,7 +31,7 @@ export default function CounterHook() {
         document.title = counter
         console.log('counter 更新')
     }, [counter]) // 仅在 counter 更改时更新 不传入第二个参数的话数据更新就会执行
-
+    console.log('counter')
     return (
         <div>
             <hr />

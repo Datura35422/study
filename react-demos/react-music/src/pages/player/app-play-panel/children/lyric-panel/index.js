@@ -10,7 +10,7 @@ import {
 } from '../../../utils/constants'
 
 import {
-  PannelWrapper,
+  PanelWrapper,
 } from './style'
 
 export default memo(function RMLyricPanel() {
@@ -36,7 +36,7 @@ export default memo(function RMLyricPanel() {
   }, [currentLyricsIndex])
 
   return (
-    <PannelWrapper ref={ panelRef }>
+    <PanelWrapper ref={ panelRef }>
       <div className='lrc-content'>
         {
           currentLyrics && currentLyrics.map((item, index) => (
@@ -48,6 +48,6 @@ export default memo(function RMLyricPanel() {
           ))
         }
       </div>
-    </PannelWrapper>
+    </PanelWrapper>
   )
 })

@@ -20,7 +20,7 @@ import UseClassname from './components/UseClassname'
 import UseTransition from './components/transition/UseTransition'
 // import Home from './components/useRedux/Home'
 // import About from './components/useRedux/About'
-// import UseConnect from './components/useConnect'
+import UseConnect from './components/useConnect'
 import UseRouter from './components/useRouter'
 import UseHook from './components/useHook'
 
@@ -72,12 +72,12 @@ function App() {
       <hr />
       <h2>使用第三方库 react-transition-group</h2>
       <UseTransition></UseTransition>
-      {/* <hr />
-      <h2>使用 redux</h2>
+      <hr />
+      {/* <h2>使用 redux</h2>
       <Home></Home>
-      <About></About>
+      <About></About> */}
       <h2>使用 redux 优化</h2>
-      <UseConnect></UseConnect> */}
+      <UseConnect></UseConnect>
       <hr />
       <h2>使用 router</h2>
       <UseRouter></UseRouter>

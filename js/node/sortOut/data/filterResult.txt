@@ -1,0 +1,275 @@
+91 个结果 - 91 文件
+// 搜索 /request' 结果
+
+src/components/ApproveChange/service.js:
+  1: import { post } from '@utils/request';
+
+src/components/Calendar/index.jsx:
+  8: import { get } from '../../utils/request';
+
+src/components/DetailsTaskNew/injector.js:
+  2: import { post } from '@utils/request';
+
+src/components/form/FormBankCard/service.js:
+  1: import { post } from '@utils/request';
+
+src/components/form/FormCustomSelect/service.js:
+  1: import { post, get } from '@utils/request';
+
+src/components/form/FormEventSelect/service.js:
+  1: import { post } from '@utils/request';
+
+src/components/form/FormReason/service.js:
+  1: import { post } from '@utils/request';
+
+src/helpers/requests.js:
+  1: import { request } from '@utils/request';
+
+src/layouts/Notification/service.js:
+  1: import { post } from '@utils/request';
+
+src/pages/achievement/achievementManage/service.js:
+  1: import { post } from '@utils/request';
+
+src/pages/achievement/myAchievement/achievementWait/service.js:
+  1: import { post } from '@utils/request';
+
+src/pages/achievement/myAchievement/components/service.js:
+  2: import { post } from '@utils/request';
+
+src/pages/achievement/myAchievement/personAchievement/service.js:
+  1: import { post } from '@utils/request';
+
+src/pages/achievement/myAchievement/teamAchievement/service.js:
+  1: import { post } from '@utils/request';
+
+src/pages/contract/service.js:
+  2: import { post as oldPost } from '@utils/request';
+
+src/pages/dashboard/services.js:
+  1: import { post } from '@utils/request';
+
+src/pages/holiday/account/service.ts:
+  1: import { post, get } from '@utils/request';
+
+src/pages/holiday/record/askforleaveRecord/service.js:
+  1: import { get, post } from '@utils/request';
+
+src/pages/holiday/record/outRecord/components/injector.js:
+  2: // import { post } from '@utils/request'
+
+src/pages/holiday/record/overtimeRecord/service.js:
+  1: import { get, post } from '@utils/request';
+
+src/pages/notification/service.js:
+  1: import { post, get } from '@utils/request';
+
+src/pages/onboarding/manage/service.js:
+  1: import { post, get } from '@utils/request';
+
+src/pages/onboarding/manage/newStaffDetail/service.js:
+  2: import { post } from '@utils/request';
+
+src/pages/onboarding/manage/newStaffDetail/components/editTask/service.js:
+  2: import { post } from '@utils/request';
+
+src/pages/onboarding/manage/newStaffDetail/components/formComponent/service.js:
+  2: import { post } from '@utils/request';
+
+src/pages/organization/graph/service.js:
+  1: import { post } from '@utils/request';
+
+src/pages/organization/jobPosition/service.js:
+  1: import { post } from '@utils/request';
+
+src/pages/organization/position/service.js:
+  1: import { post } from '@utils/request';
+
+src/pages/organization/report/service.js:
+  1: import { post } from '@utils/request';
+
+src/pages/organization/structure/components/formComponent/service.js:
+  2: import { post } from '@utils/request';
+
+src/pages/organization/structure/list/service.js:
+  2: import { post } from '@utils/request';
+
+src/pages/report/service.js:
+  1: import { get, post } from '@utils/request';
+
+src/pages/setting/service.js:
+  3: import { post } from '@utils/request';
+
+src/pages/setting/achievements/plan/createPlan/information/service.js:
+  1: import { get } from '@utils/request';
+
+src/pages/setting/achievements/plan/createPlan/process/service.js:
+  1: import { get, post } from '@utils/request';
+
+src/pages/setting/achievements/plan/createPlan/testPlan/service.js:
+  1: import { post } from '@utils/request';
+
+src/pages/setting/achievements/plan/list/service.js:
+  3: import { post } from '@utils/request';
+
+src/pages/setting/achievements/setup/service.js:
+  1: import { post } from '@utils/request';
+
+src/pages/setting/achievements/template/service.js:
+  3: import { get, post } from '@utils/request';
+
+src/pages/setting/approve/service.js:
+  1: import { get, post } from '@utils/request';
+
+src/pages/setting/approve/createFlow/createApproval/service.js:
+  1: import { get, post } from '@utils/request';
+
+src/pages/setting/approve/createFlow/createForm/service.js:
+  1: import { post } from '@utils/request';
+
+src/pages/setting/approve/createFlow/createInformation/service.js:
+  1: import { get, post } from '@utils/request';
+
+src/pages/setting/approve/createFlow/testFlow/service.js:
+  1: import { post } from '@utils/request';
+
+src/pages/setting/commonSetting/print/service.js:
+  1: import { post } from '@utils/request';
+
+src/pages/setting/holiday/holidayRule/components/GrantRecord/service.js:
+  9: import { post, get } from '@utils/request';
+
+src/pages/setting/holiday/type/service.js:
+  1: import { post } from '@utils/request';
+
+src/pages/setting/onboarding/fieldMap/service.js:
+  3: import { post } from '@utils/request';
+
+src/pages/setting/onboarding/messageGather/StuffMsg/service.js:
+  1: import { post } from '@utils/request';
+
+src/pages/setting/onboarding/planSetting/tasks/service.js:
+  1: import { post } from '@utils/request';
+
+src/pages/setting/operation-log/service.js:
+  2: import { post } from '@utils/request';
+
+src/pages/setting/org/addressManage/service.js:
+  1: import { post } from '@utils/request';
+
+src/pages/setting/org/baseSetting/jobSetting/service.js:
+  1: import { post, get } from '@utils/request';
+
+src/pages/setting/org/jobManage/service.js:
+  1: import { post, get } from '@utils/request';
+
+src/pages/setting/org/jobManage/jobCateChild/service.js:
+  1: import { post, get } from '@utils/request';
+
+src/pages/setting/org/jobManage/jobCategory/service.js:
+  1: import { post, get } from '@utils/request';
+
+src/pages/setting/org/jobManage/jobFamily/service.js:
+  1: import { post, get } from '@utils/request';
+
+src/pages/setting/org/jobNeedsMsg/service.js:
+  1: import { post } from '@utils/request';
+
+src/pages/setting/org/legalCompany/service.js:
+  1: import { post } from '@utils/request';
+
+src/pages/setting/org/orgInfo/dutyManage/service.js:
+  4: import request from '@utils/request';
+
+src/pages/setting/org/orgInfo/partManage/service.js:
+  4: import request from '@utils/request';
+
+src/pages/setting/org/rank/service.js:
+  1: import { post, get } from '@utils/request';
+
+src/pages/setting/permissions/accountManage/service.js:
+  1: import { post } from '@utils/request';
+
+src/pages/setting/permissions/roleManage/service.js:
+  3: import { post } from '@utils/request';
+
+src/pages/setting/salary/standardsProject/service.js:
+  1: import { post } from '@/utils/request';
+
+src/pages/setting/staff/affairManage/service.js:
+  1: import { post } from '@utils/request';
+
+src/pages/setting/staff/autoStaffInfo/service.js:
+  3: import { post } from '@utils/request';
+
+src/pages/setting/staff/basicSetting/service.js:
+  1: import { post } from '@utils/request';
+
+src/pages/setting/staff/jobNumberManage/service.js:
+  3: import { post } from '@utils/request';
+
+src/pages/setting/staff/policy/service.js:
+  1: import { post, get } from '@utils/request';
+
+src/pages/setting/staff/staffInfo/contractTerm/service.js:
+  1: import { get, post } from '@utils/request';
+
+src/pages/setting/staff/staffInfo/recruitManage/service.js:
+  2: import { post } from '@utils/request';
+
+src/pages/setting/starffSetting/settingStarff/service.js:
+  1: import { post, get } from '@utils/request';
+
+src/pages/setting/starffSetting/staffPermissions/service.js:
+  2: import { post } from '@utils/request';
+
+src/pages/setting/thirdParty/basic/service.js:
+  1: import { post, get } from '@utils/request';
+
+src/pages/staffManage/service.js:
+  1: import { post } from '@utils/request';
+
+src/pages/staffManage/signCenter/models/service.ts:
+  1: import { post } from '@utils/request';
+
+src/pages/staffManage/staffDetail/service.js:
+  2: import { get, post } from '@utils/request';
+
+src/pages/staffManage/staffDetail/components/adjustCompanyAge/service.js:
+  1: import { get, post } from '@utils/request';
+
+src/pages/staffManage/staffDetail/components/adjustDay/service.js:
+  1: import { get, post } from '@utils/request';
+
+src/pages/staffManage/staffDetail/components/attendance/service.js:
+  1: import { post, get } from '@utils/request';
+
+src/pages/staffManage/staffList/$staffType/service.js:
+  1: import { post, get } from '@utils/request';
+
+src/pages/staffManage/staffList/$staffType/components/autoRegularDrawer/service.js:
+  1: import { post } from '@utils/request';
+
+src/pages/staffManage/staffList/$staffType/components/RosterExport/service.ts:
+  1: import { post } from '@utils/request';
+
+src/pages/user/login/components/sendMail.js:
+  5: import { post } from '@utils/request';
+
+src/pages/user/setPassword/index.js:
+  7: import { post } from '@utils/request';
+
+src/pages/workflow/service.js:
+  3: import { post, get } from '@utils/request';
+
+src/pages/workflow/staffFlow/service.js:
+  1: import { post } from '@utils/request';
+
+src/services/dictionary.js:
+  1: import { get, post } from '@utils/request';
+
+src/services/imports.js:
+  1: import { post } from '@utils/request';
+
+src/services/user.js:
+  1: import { post as oldPost } from '@utils/request';

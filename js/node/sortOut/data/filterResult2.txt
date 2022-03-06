@@ -1,0 +1,224 @@
+74 个结果 - 74 文件
+// 搜索 /fetch' 的结果
+
+src/_components/AddressSelect/service.js:
+  1: import R from '@utils/fetch';
+
+src/components/AddressSelect/services.js:
+  1: import R from '@utils/fetch';
+
+src/components/CitySelect/services.js:
+  1: import R from '@utils/fetch';
+
+src/components/CorrectCardModal/service.js:
+  1: import R from '@utils/fetch';
+
+src/components/DepartmentEmployeeSelector/Departments.jsx:
+  5: import request from '@utils/fetch';
+
+src/components/DepartmentEmployeeSelector/Roles.jsx:
+  6: import request from '@utils/fetch';
+
+src/components/DepartmentSelector/index.jsx:
+  4: import request from '@utils/fetch';
+
+src/components/DepartmentSingleSelector/index.jsx:
+  3: import request from '@utils/fetch';
+
+src/components/EmployeeRoles/index.js:
+  11: import request from '@utils/fetch';
+
+src/components/EmployeeSelector/injector.js:
+  1: import R from '@utils/fetch';
+
+src/components/form/FormCustomSelect/service.js:
+  2: import R from '@utils/fetch';
+
+src/components/FormField/PositionSelect/index.js:
+  3: import { post } from '@utils/fetch';
+
+src/components/moka-editor/service.js:
+  1: import R from '@utils/fetch';
+
+src/components/RoleSelector/service.js:
+  1: import R from '@utils/fetch';
+
+src/models/imports.js:
+  3: import R from '@utils/fetch';
+
+src/pages/_components/payrollUploadCheck/service.js:
+  1: import { get, post } from '@utils/fetch';
+
+src/pages/achievement/myAchievement/components/service.js:
+  1: import R from '@utils/fetch';
+
+src/pages/contract/service.js:
+  1: import { post, get } from '@utils/fetch';
+
+src/pages/dashboard/services.js:
+  2: import request from '@utils/fetch';
+
+src/pages/departure/service.js:
+  1: import { post } from '@utils/fetch';
+
+src/pages/holiday/service.js:
+  1: import R from '@utils/fetch';
+
+src/pages/holiday/record/askforleaveRecord/service.js:
+  2: import { post as fetchPost } from '@utils/fetch';
+
+src/pages/holiday/record/businessRecord/service.js:
+  1: import R from '@utils/fetch';
+
+src/pages/holiday/record/outRecord/service.js:
+  1: import R from '@utils/fetch';
+
+src/pages/holiday/record/patchPunch/service.js:
+  1: import R from '@utils/fetch';
+
+src/pages/holiday/shiftMgt/shiftManagement/services.js:
+  1: import { post, get } from '@utils/fetch';
+
+src/pages/holiday/shiftMgt/shiftRecord/services.js:
+  1: import { post } from '@utils/fetch';
+
+src/pages/onboarding/manage/preService.js:
+  2: import R from '@utils/fetch';
+
+src/pages/onboarding/manage/newStaffDetail/service.js:
+  1: import R from '@utils/fetch';
+
+src/pages/onboarding/manage/newStaffDetail/components/editTask/service.js:
+  1: import R from '@utils/fetch';
+
+src/pages/onboarding/manage/newStaffDetail/components/formComponent/service.js:
+  1: import R from '@utils/fetch';
+
+src/pages/onboarding/tasks/service.js:
+  1: import request from '@utils/fetch';
+
+src/pages/organization/recruitment/service.js:
+  1: import { post } from '@utils/fetch';
+
+src/pages/organization/recruitment/_components/DemandDrawer/service.js:
+  1: import R from '@utils/fetch';
+
+src/pages/organization/report/service.js:
+  2: import R from '@utils/fetch';
+
+src/pages/organization/structure/components/DrawerTitle.jsx:
+  7: import R from '@utils/fetch';
+
+src/pages/organization/structure/components/formComponent/service.js:
+  1: import R from '@utils/fetch';
+
+src/pages/organization/structure/list/service.js:
+  1: import R from '@utils/fetch';
+
+src/pages/report/createReport/service.js:
+  1: import R from '@utils/fetch';
+
+src/pages/salaryManage/calculationPage/service.js:
+  1: import R from '@utils/fetch';
+
+src/pages/salaryManage/calculationPage/salaryDetail/service.js:
+  1: import R from '@utils/fetch';
+
+src/pages/salaryManage/calculationPage/salaryDetail/preparation/recordSocialInsurance/server.ts:
+  1: import R from '@/utils/fetch';
+
+src/pages/salaryManage/calculationPage/salaryDetail/preparation/recordSpecialAddition/server.ts:
+  1: import R from '@/utils/fetch';
+
+src/pages/salaryManage/payroll/service.js:
+  1: import { get, post } from '@utils/fetch';
+
+src/pages/salaryManage/payroll/payrollDetail/service.js:
+  1: import { get, post } from '@utils/fetch';
+
+src/pages/salaryManage/payroll/payrollSetting/service.js:
+  1: import R from '@utils/fetch';
+
+src/pages/salaryManage/salary/service.js:
+  1: import { get, post } from '@utils/fetch';
+
+src/pages/scheduling/services.js:
+  1: import { post } from '@utils/fetch';
+
+src/pages/setting/commonSetting/notification/service.js:
+  1: import R from '@utils/fetch';
+
+src/pages/setting/external-interface/services.js:
+  1: import R from '@utils/fetch';
+
+src/pages/setting/holiday/holidayNotice/services.js:
+  1: import { get, post } from '@utils/fetch';
+
+src/pages/setting/holiday/holidayRule/service.js:
+  1: import { get } from '@utils/fetch';
+
+src/pages/setting/holiday/sendHolidayIntelligently/service.js:
+  1: import { post } from '@utils/fetch';
+
+src/pages/setting/imports/service.js:
+  1: import { post } from '@utils/fetch';
+
+src/pages/setting/onboarding/notification/service.js:
+  1: import R from '@utils/fetch';
+
+src/pages/setting/onboarding/planSetting/plan/service.js:
+  1: import R from '@utils/fetch';
+
+src/pages/setting/operation-log/service.js:
+  1: import { get } from '@utils/fetch';
+
+src/pages/setting/permissions/accountManage/service.js:
+  2: import { post as newPost } from '@utils/fetch';
+
+src/pages/setting/permissions/roleManage/authorSetting/service.js:
+  1: import R from '@utils/fetch';
+
+src/pages/setting/salary/calculationPage/service.js:
+  1: import R from '@utils/fetch';
+
+src/pages/setting/salary/payLevels/service.js:
+  1: import R from '@utils/fetch';
+
+src/pages/setting/salary/plan/service.js:
+  1: import R from '@utils/fetch';
+
+src/pages/setting/salary/structure/service.js:
+  1: import R from '@utils/fetch';
+
+src/pages/setting/salary/transferType/service.js:
+  1: import R from '@utils/fetch';
+
+src/pages/setting/thirdParty/electronicSignature/service.js:
+  1: import { get, post } from '@utils/fetch';
+
+src/pages/setting/thirdParty/fieldMap/index.js:
+  15:       type: 'thirdPartyFieldMap/fetch',
+
+src/pages/setting/thirdParty/fieldMap/service.js:
+  1: import { get, post } from '@utils/fetch';
+
+src/pages/staffManage/signCenter/service.js:
+  1: import { post } from '@utils/fetch';
+
+src/pages/staffManage/staffDetail/service.js:
+  3: import R from '@utils/fetch';
+
+src/pages/staffManage/staffDetail/components/staffInfo/Form.jsx:
+  6: import { post } from '@utils/fetch';
+
+src/pages/staffManage/staffList/$staffType/newService.js:
+  1: import { post } from '@utils/fetch';
+
+src/pages/workflow/service.js:
+  1: import R from '@utils/fetch';
+
+src/services/imports.js:
+  2: import { get } from '@utils/fetch';
+
+src/services/user.js:
+  2: import { post } from '@utils/fetch';

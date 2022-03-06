@@ -99,7 +99,7 @@ var Animate = function (dom) {
 // 动画启动,需要记录一些信息,供缓动算法在以后计算小球当前位置的时候使用
 Animate.prototype.start = function (propertyName, endPos, duration, easing) {
   this.startTime = +new Date // 动画启动时间
-  this.startPos = this.dom.getBoundingCLientRect()[propertyName] // dom节点初始位置
+  this.startPos = this.dom.getBoundingClientRect()[propertyName] // dom节点初始位置
   this.propertyName = propertyName // dom节点需要被改变的CSS属性名
   this.endPos = endPos // dom节点目标
   this.duration = duration // 动画持续时间
